@@ -1,0 +1,743 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EnglishEdu – Learn English Free</title>
+    <meta
+      name="description"
+      content="Learn English grammar, tenses, vocabulary and more with free interactive lessons."
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📗</text></svg>"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body class="mesh-bg">
+    <!-- ═══════════ NAVBAR ═══════════ -->
+    <nav class="navbar">
+      <div class="navbar-inner">
+        <a href="index.html" class="nav-logo">
+          <div class="logo-icon">📗</div>
+          EnglishEdu
+        </a>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="grammar.html">Grammar</a></li>
+          <li><a href="tenses.html">Tenses</a></li>
+          <li><a href="word-combi.html">Word Combinations</a></li>
+          <li><a href="exercises.html">Exercises</a></li>
+          <li><a href="downloads.html">Downloads</a></li>
+        </ul>
+        <div class="nav-right">
+          <div class="search-wrap">
+            <input type="text" placeholder="Search lessons…" />
+            <i class="fa fa-search search-icon"></i>
+          </div>
+          <button
+            class="dark-toggle"
+            onclick="toggleDark()"
+            title="Toggle dark mode"
+          >
+            🌙
+          </button>
+          <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+      <div class="mobile-menu" id="mobile-menu">
+        <a href="index.html">🏠 Home</a>
+        <a href="grammar.html">📖 Grammar</a>
+        <a href="tenses.html">⏱ Tenses</a>
+        <a href="exercises.html">✏️ Exercises</a>
+        <a href="downloads.html">📥 Downloads</a>
+      </div>
+    </nav>
+
+    <!-- ═══════════ HERO ═══════════ -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-content">
+          <div class="hero-tag reveal">
+            <span class="dot"></span>Free English Learning Platform
+          </div>
+          <h1 class="reveal reveal-delay-1">
+            Learn English<br />Easily &amp; for Free
+          </h1>
+          <p class="reveal reveal-delay-2">
+            Break through barriers with fun, interactive lessons designed for
+            beginners to advanced learners. Your journey starts today.
+          </p>
+          <div class="hero-btns reveal reveal-delay-3">
+            <a href="grammar.html" class="btn btn-primary"
+              ><i class="fa fa-rocket"></i> Start Learning</a
+            >
+            <a href="downloads.html" class="btn btn-ghost"
+              ><i class="fa fa-download"></i> Free Materials</a
+            >
+          </div>
+          <div class="hero-stats reveal reveal-delay-4">
+            <div class="hero-stat">
+              <div class="num">
+                <span class="count-up" data-target="12000" data-suffix="+"
+                  >0+</span
+                >
+              </div>
+              <div class="lbl">Students</div>
+            </div>
+            <div class="hero-stat">
+              <div class="num">
+                <span class="count-up" data-target="120" data-suffix="+"
+                  >0+</span
+                >
+              </div>
+              <div class="lbl">Lessons</div>
+            </div>
+            <div class="hero-stat">
+              <div class="num">
+                <span class="count-up" data-target="48" data-suffix="">0</span>
+              </div>
+              <div class="lbl">PDF Files</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-blob"></div>
+          <div class="hero-cards-grid">
+            <div class="h-card glass reveal">
+              <div class="icon">📖</div>
+              <h4>Grammar</h4>
+              <p>40 Topics</p>
+            </div>
+            <div class="h-card glass reveal reveal-delay-1">
+              <div class="icon">⏱</div>
+              <h4>12 Tenses</h4>
+              <p>With examples</p>
+            </div>
+            <div class="h-card glass reveal reveal-delay-2">
+              <div class="icon">🧩</div>
+              <h4>A, E, I, O, U</h4>
+              <p>Word Combinations</p>
+            </div>
+            <div class="h-card glass reveal reveal-delay-3">
+              <div class="icon">🎯</div>
+              <h4>Exercises</h4>
+              <p>Interactive quiz</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ FEATURE BOXES ═══════════ -->
+    <section>
+      <div class="container">
+        <div class="features-4">
+          <a
+            href="grammar.html"
+            class="feat-box glass reveal"
+            style="text-decoration: none"
+          >
+            <div class="feat-icon">🗝️</div>
+            <h3>Grammar Essentials</h3>
+            <p>ไวยากรณ์พื้นฐานครบครัน</p>
+            <div
+              style="
+                margin-top: 12px;
+                font-size: 0.82rem;
+                color: var(--clr-primary);
+                font-weight: 600;
+              "
+            >
+              เพิ่มเติม →
+            </div>
+          </a>
+          <a
+            href="tenses.html"
+            class="feat-box glass reveal reveal-delay-1"
+            style="text-decoration: none"
+          >
+            <div class="feat-icon">⏰</div>
+            <h3>All 12 Tenses</h3>
+            <p>เจาะลึก 12 เทนส์ เรียนรู้ทันที</p>
+            <div
+              style="
+                margin-top: 12px;
+                font-size: 0.82rem;
+                color: var(--clr-primary);
+                font-weight: 600;
+              "
+            >
+              เรียนรู้ทันที →
+            </div>
+          </a>
+          <a
+            href="word-combi.html"
+            class="feat-box glass reveal reveal-delay-2"
+            style="text-decoration: none"
+          >
+            <div class="feat-icon">🧩</div>
+            <h3>Word Combinations</h3>
+            <p>รวมสำนวนและกลุ่มคำ</p>
+            <div
+              style="
+                margin-top: 12px;
+                font-size: 0.82rem;
+                color: var(--clr-primary);
+                font-weight: 600;
+              "
+            >
+              สำรวจ →
+            </div>
+          </a>
+          <a
+            href="exercises.html"
+            class="feat-box glass reveal reveal-delay-3"
+            style="text-decoration: none"
+          >
+            <div class="feat-icon">📋</div>
+            <h3>Interactive Exercises</h3>
+            <p>แบบฝึกหัดแสนสนุก</p>
+            <div
+              style="
+                margin-top: 12px;
+                font-size: 0.82rem;
+                color: var(--clr-primary);
+                font-weight: 600;
+              "
+            >
+              เริ่มทำ →
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ FEATURED GRAMMAR LESSONS ═══════════ -->
+    <section>
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-label">Grammar</span>
+          <h2 class="section-title">Featured Grammar Lessons</h2>
+          <p class="section-sub">
+            Master the building blocks of English with our structured grammar
+            guides.
+          </p>
+        </div>
+        <div class="cards-grid">
+          <div class="lesson-card glass reveal">
+            <div
+              class="card-top"
+              style="background: linear-gradient(135deg, #a7f3d0, #6ee7b7)"
+            >
+              📝
+            </div>
+            <div class="card-body">
+              <span class="card-badge">Beginner</span>
+              <h3>Parts of Speech</h3>
+              <p>
+                Nouns, verbs, adjectives, adverbs and more explained simply.
+              </p>
+              <div class="card-footer">
+                <span class="card-meta"
+                  ><i class="fa fa-clock"></i> 15 min</span
+                >
+                <a href="grammar.html" class="card-arrow"
+                  ><i class="fa fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="lesson-card glass reveal reveal-delay-1">
+            <div
+              class="card-top"
+              style="background: linear-gradient(135deg, #bbf7d0, #4ade80)"
+            >
+              💬
+            </div>
+            <div class="card-body">
+              <span class="card-badge">Beginner</span>
+              <h3>Sentence Structure</h3>
+              <p>
+                How to build correct and natural English sentences step by step.
+              </p>
+              <div class="card-footer">
+                <span class="card-meta"
+                  ><i class="fa fa-clock"></i> 20 min</span
+                >
+                <a href="grammar.html" class="card-arrow"
+                  ><i class="fa fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="lesson-card glass reveal reveal-delay-2">
+            <div
+              class="card-top"
+              style="background: linear-gradient(135deg, #d1fae5, #34d399)"
+            >
+              🔗
+            </div>
+            <div class="card-body">
+              <span class="card-badge">Intermediate</span>
+              <h3>Conjunctions &amp; Connectors</h3>
+              <p>Link ideas smoothly — and, but, because, although, however…</p>
+              <div class="card-footer">
+                <span class="card-meta"
+                  ><i class="fa fa-clock"></i> 18 min</span
+                >
+                <a href="grammar.html" class="card-arrow"
+                  ><i class="fa fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="lesson-card glass reveal reveal-delay-3">
+            <div
+              class="card-top"
+              style="background: linear-gradient(135deg, #ecfdf5, #6ee7b7)"
+            >
+              🎭
+            </div>
+            <div class="card-body">
+              <span class="card-badge">Intermediate</span>
+              <h3>Active &amp; Passive Voice</h3>
+              <p>
+                Understand when and how to use active vs passive constructions.
+              </p>
+              <div class="card-footer">
+                <span class="card-meta"
+                  ><i class="fa fa-clock"></i> 22 min</span
+                >
+                <a href="grammar.html" class="card-arrow"
+                  ><i class="fa fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="text-align: center; margin-top: 36px">
+          <a href="grammar.html" class="btn btn-outline"
+            >View All Grammar Lessons <i class="fa fa-arrow-right"></i
+          ></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ TENSES OVERVIEW ═══════════ -->
+    <section style="background: var(--clr-bg2)">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="section-label">Tenses</span>
+          <h2 class="section-title">The 12 English Tenses</h2>
+          <p class="section-sub">
+            Quick overview — click any card for a full lesson.
+          </p>
+        </div>
+        <div class="tense-grid">
+          <a
+            href="tenses.html"
+            class="tense-card glass reveal"
+            style="text-decoration: none"
+          >
+            <h4>Simple Present</h4>
+            <p>Habits &amp; facts</p>
+            <div class="example">She <strong>works</strong> every day.</div>
+          </a>
+          <a
+            href="tenses.html"
+            class="tense-card glass reveal reveal-delay-1"
+            style="text-decoration: none"
+          >
+            <h4>Present Continuous</h4>
+            <p>Actions happening now</p>
+            <div class="example">She <strong>is working</strong> now.</div>
+          </a>
+          <a
+            href="tenses.html"
+            class="tense-card glass reveal reveal-delay-2"
+            style="text-decoration: none"
+          >
+            <h4>Present Perfect</h4>
+            <p>Past with present effect</p>
+            <div class="example">She <strong>has worked</strong> here.</div>
+          </a>
+          <a
+            href="tenses.html"
+            class="tense-card glass reveal reveal-delay-1"
+            style="text-decoration: none"
+          >
+            <h4>Simple Past</h4>
+            <p>Completed past actions</p>
+            <div class="example">She <strong>worked</strong> yesterday.</div>
+          </a>
+          <a
+            href="tenses.html"
+            class="tense-card glass reveal reveal-delay-2"
+            style="text-decoration: none"
+          >
+            <h4>Past Continuous</h4>
+            <p>Ongoing past actions</p>
+            <div class="example">She <strong>was working</strong>.</div>
+          </a>
+          <a
+            href="tenses.html"
+            class="tense-card glass reveal reveal-delay-3"
+            style="text-decoration: none"
+          >
+            <h4>Past Perfect</h4>
+            <p>Before another past event</p>
+            <div class="example">She <strong>had worked</strong>.</div>
+          </a>
+        </div>
+        <div style="text-align: center; margin-top: 36px">
+          <a href="tenses.html" class="btn btn-primary"
+            >Explore All 12 Tenses <i class="fa fa-arrow-right"></i
+          ></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ PRACTICE EXERCISES ═══════════ -->
+    <section>
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-label">Practice</span>
+          <h2 class="section-title">Practice Exercises</h2>
+          <p class="section-sub">
+            Test your knowledge with interactive exercises and instant feedback.
+          </p>
+        </div>
+        <div class="ex-grid">
+          <div class="ex-card glass reveal">
+            <div class="ex-type">Grammar Quiz</div>
+            <h3>Mixed Tenses Quiz</h3>
+            <p>Choose the correct verb tense for each sentence.</p>
+            <div class="progress-wrap">
+              <div class="progress-label">
+                <span>Completion Rate</span><span>82%</span>
+              </div>
+              <div class="progress-bar">
+                <div
+                  class="progress-fill"
+                  data-width="82"
+                  style="width: 0%"
+                ></div>
+              </div>
+            </div>
+            <div>
+              <span class="diff-badge diff-easy">Easy</span>
+              <span style="font-size: 0.8rem; color: var(--clr-muted)"
+                >10 questions</span
+              >
+            </div>
+            <div style="margin-top: 14px">
+              <a href="exercises.html" class="btn btn-primary btn-sm"
+                >Start Quiz <i class="fa fa-play"></i
+              ></a>
+            </div>
+          </div>
+          <div class="ex-card glass reveal reveal-delay-1">
+            <div class="ex-type">Fill-in-the-Blank</div>
+            <h3>Prepositions Practice</h3>
+            <p>Fill in the blanks with the correct preposition.</p>
+            <div class="progress-wrap">
+              <div class="progress-label">
+                <span>Completion Rate</span><span>64%</span>
+              </div>
+              <div class="progress-bar">
+                <div
+                  class="progress-fill"
+                  data-width="64"
+                  style="width: 0%"
+                ></div>
+              </div>
+            </div>
+            <div>
+              <span class="diff-badge diff-med">Medium</span>
+              <span style="font-size: 0.8rem; color: var(--clr-muted)"
+                >15 questions</span
+              >
+            </div>
+            <div style="margin-top: 14px">
+              <a href="exercises.html" class="btn btn-primary btn-sm"
+                >Start Quiz <i class="fa fa-play"></i
+              ></a>
+            </div>
+          </div>
+          <div class="ex-card glass reveal reveal-delay-2">
+            <div class="ex-type">Advanced</div>
+            <h3>Conditional Sentences</h3>
+            <p>Master all four types of conditional clauses.</p>
+            <div class="progress-wrap">
+              <div class="progress-label">
+                <span>Completion Rate</span><span>41%</span>
+              </div>
+              <div class="progress-bar">
+                <div
+                  class="progress-fill"
+                  data-width="41"
+                  style="width: 0%"
+                ></div>
+              </div>
+            </div>
+            <div>
+              <span class="diff-badge diff-hard">Hard</span>
+              <span style="font-size: 0.8rem; color: var(--clr-muted)"
+                >20 questions</span
+              >
+            </div>
+            <div style="margin-top: 14px">
+              <a href="exercises.html" class="btn btn-primary btn-sm"
+                >Start Quiz <i class="fa fa-play"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ DOWNLOAD SECTION ═══════════ -->
+    <section style="background: var(--clr-bg2)">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-label">Downloads</span>
+          <h2 class="section-title">Download Learning Materials</h2>
+          <p class="section-sub">
+            Free PDFs and guides to study offline, anytime, anywhere.
+          </p>
+        </div>
+        <div class="dl-grid">
+          <div class="dl-card glass reveal">
+            <div class="dl-card-top">
+              <div class="dl-icon pdf">
+                <i
+                  class="fa fa-file-pdf"
+                  style="color: #ef4444; font-size: 1.5rem"
+                ></i>
+              </div>
+              <div class="dl-info">
+                <h3>Grammar Guide – Complete</h3>
+                <p>
+                  All grammar rules in one comprehensive PDF. Perfect for quick
+                  reference.
+                </p>
+              </div>
+            </div>
+            <div class="dl-meta">
+              <span><i class="fa fa-file"></i> grammar-guide.pdf</span>
+              <span><i class="fa fa-hdd"></i> 2.4 MB</span>
+              <span><i class="fa fa-download"></i> 0 downloads</span>
+            </div>
+            <a href="downloads.html" class="btn btn-primary btn-sm"
+              ><i class="fa fa-download"></i> Download Free</a
+            >
+          </div>
+          <div class="dl-card glass reveal reveal-delay-1">
+            <div class="dl-card-top">
+              <div class="dl-icon pdf">
+                <i
+                  class="fa fa-file-pdf"
+                  style="color: #ef4444; font-size: 1.5rem"
+                ></i>
+              </div>
+              <div class="dl-info">
+                <h3>Tense Chart – Printable</h3>
+                <p>
+                  Visual tense chart with formulas, signals and examples for all
+                  12 tenses.
+                </p>
+              </div>
+            </div>
+            <div class="dl-meta">
+              <span><i class="fa fa-file"></i> tense-chart.pdf</span>
+              <span><i class="fa fa-hdd"></i> 1.1 MB</span>
+              <span><i class="fa fa-download"></i> 0 downloads</span>
+            </div>
+            <a href="downloads.html" class="btn btn-primary btn-sm"
+              ><i class="fa fa-download"></i> Download Free</a
+            >
+          </div>
+          <div class="dl-card glass reveal reveal-delay-2">
+            <div class="dl-card-top">
+              <div class="dl-icon doc">
+                <i
+                  class="fa fa-file-word"
+                  style="color: #3b82f6; font-size: 1.5rem"
+                ></i>
+              </div>
+              <div class="dl-info">
+                <h3>Vocabulary Workbook</h3>
+                <p>
+                  500+ essential words with meanings, examples and exercises.
+                </p>
+              </div>
+            </div>
+            <div class="dl-meta">
+              <span><i class="fa fa-file"></i> vocabulary-workbook.docx</span>
+              <span><i class="fa fa-hdd"></i> 1.8 MB</span>
+              <span><i class="fa fa-download"></i> 0 downloads</span>
+            </div>
+            <a href="downloads.html" class="btn btn-primary btn-sm"
+              ><i class="fa fa-download"></i> Download Free</a
+            >
+          </div>
+        </div>
+        <div class="download-preview glass reveal" style="margin-top: 30px; padding: 24px; display: flex; flex-direction: column; gap: 16px;">
+          <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="width: 42px; height: 42px; border-radius: 14px; background: rgba(16, 185, 129, 0.12); display: grid; place-items: center; color: var(--clr-primary); font-size: 1.25rem;">
+              <i class="fa fa-file-import"></i>
+            </div>
+            <div>
+              <h3 style="margin: 0 0 8px; font-size: 1.1rem;">Upload a file to view details</h3>
+              <p style="margin: 0; color: var(--clr-muted); font-size: 0.95rem; max-width: 620px;">Choose a file from your computer and the page will show the actual file name and size.</p>
+            </div>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: center;">
+            <label class="btn btn-ghost" for="file-preview-input" style="padding: 12px 18px; cursor: pointer;">
+              <i class="fa fa-upload" style="margin-right: 8px;"></i> Select File
+            </label>
+            <input id="file-preview-input" type="file" style="display: none;" />
+            <div id="file-preview-details" style="color: var(--clr-muted); font-size: 0.95rem; min-width: 220px;">No file selected.</div>
+          </div>
+        </div>
+        <div style="text-align: center; margin-top: 36px">
+          <a href="downloads.html" class="btn btn-outline"
+            >View All Downloads <i class="fa fa-arrow-right"></i
+          ></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ TIPS ═══════════ -->
+    <section>
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="section-label">Tips</span>
+          <h2 class="section-title">Student Learning Tips</h2>
+          <p class="section-sub">
+            Smart habits that accelerate your English learning journey.
+          </p>
+        </div>
+        <div class="tips-grid">
+          <div class="tip-card glass reveal">
+            <div class="tip-num">01</div>
+            <h4>Practice Daily</h4>
+            <p>
+              Even 15 minutes a day builds strong habits and improves retention
+              significantly.
+            </p>
+          </div>
+          <div class="tip-card glass reveal reveal-delay-1">
+            <div class="tip-num">02</div>
+            <h4>Read Aloud</h4>
+            <p>
+              Reading English aloud trains your ear, mouth and brain
+              simultaneously for fluency.
+            </p>
+          </div>
+          <div class="tip-card glass reveal reveal-delay-2">
+            <div class="tip-num">03</div>
+            <h4>Keep a Vocabulary Journal</h4>
+            <p>
+              Write new words with their meanings and example sentences every
+              day.
+            </p>
+          </div>
+          <div class="tip-card glass reveal reveal-delay-3">
+            <div class="tip-num">04</div>
+            <h4>Watch English Content</h4>
+            <p>
+              Movies, podcasts and YouTube with subtitles are fun ways to absorb
+              natural English.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ CTA ═══════════ -->
+    <section>
+      <div class="container">
+        <div class="cta-banner reveal">
+          <h2>Ready to Start Your Journey?</h2>
+          <p>
+            Join thousands of students learning English for free today. No
+            registration required.
+          </p>
+          <a
+            href="grammar.html"
+            class="btn"
+            style="
+              background: #fff;
+              color: var(--clr-primary);
+              font-weight: 700;
+              box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
+            "
+          >
+            <i class="fa fa-rocket"></i> Get Started Free
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ FOOTER ═══════════ -->
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="logo">📗 EnglishEdu</div>
+          <p>
+            A free English learning platform for Thai students and beginners
+            worldwide. Learn grammar, tenses, and vocabulary with ease.
+          </p>
+          <div class="social-row">
+            <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-btn"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-btn"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4>Learn</h4>
+          <ul>
+            <li><a href="grammar.html">Grammar</a></li>
+            <li><a href="tenses.html">Tenses</a></li>
+            <li><a href="exercises.html">Exercises</a></li>
+            <li><a href="downloads.html">Downloads</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Topics</h4>
+          <ul>
+            <li><a href="grammar.html">Parts of Speech</a></li>
+            <li><a href="grammar.html">Sentence Structure</a></li>
+            <li><a href="grammar.html">Active/Passive</a></li>
+            <li><a href="grammar.html">Conditionals</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="downloads.html">Grammar Guide PDF</a></li>
+            <li><a href="downloads.html">Tense Chart</a></li>
+            <li><a href="exercises.html">Mini Quiz</a></li>
+            <li><a href="index.html">Back to Top</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        © 2025 EnglishEdu · Free English Learning for Everyone
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
