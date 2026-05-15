@@ -1255,43 +1255,27 @@ footer ul li a:hover {
   }
 }
 @media (max-width: 680px) {
-  .nav-links {
-    display: none;
-  }
-  .hamburger {
-    display: flex;
-  }
-  .search-wrap {
-    display: none;
-  }
-  .features-4 {
-    grid-template-columns: 1fr;
-  }
-  .tense-grid {
-    grid-template-columns: 1fr;
-  }
-  .tense-examples {
-    grid-template-columns: 1fr;
-  }
-  section {
-    padding: 56px 0;
-  }
-
   .footer-inner {
     grid-template-columns: 1fr 1fr;
-    gap: 24px 20px;
+    gap: 20px;
   }
 
   .footer-brand {
     grid-column: 1 / -1;
   }
 
+  .footer-inner > *:nth-child(3),
+  .footer-inner > *:nth-child(4) {
+    display: none;
+  }
+
   footer {
-    padding: 36px 0 20px;
+    padding: 28px 0 16px;
   }
 
   .footer-bottom {
-    margin-top: 24px;
+    margin-top: 16px;
+    font-size: 0.75rem;
   }
 }
 /* ── Prevent Flash of Unstyled Icons ── */
