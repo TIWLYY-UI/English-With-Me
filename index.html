@@ -713,24 +713,32 @@
 
     <!-- ═══════════ FOOTER ═══════════ -->
     <footer>
-      <div class="footer-inner">
-        <div class="footer-brand">
+      <div
+        class="footer-inner"
+        style="
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+          padding: 5px 20px 12px;
+        "
+      >
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 10px;
+          "
+        >
           <div class="logo">📗 EnglishEdu</div>
-          <p>
-            A free English learning platform for Thai students and beginners
-            worldwide.
-          </p>
-          <p style="margin-top: 10px; font-size: 0.82rem">
-            Made with ❤️ by
-            <strong style="color: var(--clr-accent)">Sonxay</strong>
-          </p>
-          <div class="social-row">
-            <a href="https://wa.me/8562067392585" class="social-btn">
-              <i class="fab fa-whatsapp"></i>
-            </a>
-            <a href="https://www.tiktok.com/@maxtiw70" class="social-btn">
-              <i class="fab fa-tiktok"></i>
-            </a>
+          <div class="social-row" style="margin: 0">
+            <a href="https://wa.me/8562067392585" class="social-btn"
+              ><i class="fab fa-whatsapp"></i
+            ></a>
+            <a href="https://www.tiktok.com/@maxtiw70" class="social-btn"
+              ><i class="fab fa-tiktok"></i
+            ></a>
             <a
               href="https://www.facebook.com/sonxay.xayyasim"
               class="social-btn"
@@ -743,36 +751,48 @@
             ></a>
           </div>
         </div>
-        <div>
-          <h4>Tenses</h4>
-          <ul>
-            <li><a href="#present">Present</a></li>
-            <li><a href="#past">Past</a></li>
-            <li><a href="#future">Future</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Learn More</h4>
-          <ul>
-            <li><a href="grammar.html">Grammar</a></li>
-            <li><a href="exercises.html">Exercises</a></li>
-            <li><a href="downloads.html">Downloads</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="downloads.html">Tense Chart PDF</a></li>
-            <li><a href="exercises.html">Mini Quiz</a></li>
-            <li><a href="index.html">Home</a></li>
-          </ul>
+        <hr
+          style="border: none; border-top: 1px solid rgba(255, 255, 255, 0.08)"
+        />
+        <div
+          style="
+            display: flex;
+            justify-content: center;
+            gap: 64px;
+            flex-wrap: wrap;
+          "
+        >
+          <div>
+            <h4 style="margin-bottom: 10px">Tenses</h4>
+            <ul style="display: flex; flex-direction: column; gap: 8px">
+              <li><a href="#present">Present</a></li>
+              <li><a href="#past">Past</a></li>
+              <li><a href="#future">Future</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 style="margin-bottom: 10px">Learn More</h4>
+            <ul style="display: flex; flex-direction: column; gap: 8px">
+              <li><a href="grammar.html">Grammar</a></li>
+              <li><a href="exercises.html">Exercises</a></li>
+              <li><a href="downloads.html">Downloads</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 style="margin-bottom: 10px">Quick Links</h4>
+            <ul style="display: flex; flex-direction: column; gap: 8px">
+              <li><a href="downloads.html">PDF</a></li>
+              <li><a href="exercises.html">Quiz</a></li>
+              <li><a href="index.html">Home</a></li>
+            </ul>
+          </div>
         </div>
       </div>
       <div class="footer-bottom">
         © 2025 EnglishEdu · Free English Learning for Everyone
       </div>
     </footer>
-
+    <script src="js/tracker.js"></script>
     <script src="js/index.js"></script>
   </body>
 </html>

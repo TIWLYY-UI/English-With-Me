@@ -1256,26 +1256,34 @@ footer ul li a:hover {
 }
 @media (max-width: 680px) {
   .footer-inner {
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 16px !important;
   }
 
   .footer-brand {
     grid-column: 1 / -1;
   }
 
-  .footer-inner > *:nth-child(3),
-  .footer-inner > *:nth-child(4) {
+  /* ซ่อน Quick Links เหลือแค่ 3 column */
+  .footer-inner > div:last-child {
     display: none;
   }
 
   footer {
-    padding: 28px 0 16px;
+    padding: 24px 0 12px !important;
   }
 
   .footer-bottom {
-    margin-top: 16px;
-    font-size: 0.75rem;
+    margin-top: 16px !important;
+  }
+  .footer-links-row {
+    justify-content: flex-start !important;
+    gap: 24px !important;
+  }
+
+  .footer-links-row ul {
+    flex-direction: row !important;
+    gap: 12px !important;
   }
 }
 /* ── Prevent Flash of Unstyled Icons ── */
