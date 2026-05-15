@@ -1270,14 +1270,28 @@ footer ul li a:hover {
   .tense-grid {
     grid-template-columns: 1fr;
   }
-  .footer-inner {
-    grid-template-columns: 1fr;
-  }
   .tense-examples {
     grid-template-columns: 1fr;
   }
   section {
     padding: 56px 0;
+  }
+
+  .footer-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px 20px;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+
+  footer {
+    padding: 36px 0 20px;
+  }
+
+  .footer-bottom {
+    margin-top: 24px;
   }
 }
 .col-grid {
@@ -1542,4 +1556,19 @@ footer ul li a:hover {
   font-size: 0.88rem;
   opacity: 0.78;
   font-style: italic;
+}
+/* ── Prevent Flash of Unstyled Icons ── */
+.social-btn i {
+  font-family: "Font Awesome 6 Brands" !important;
+  font-style: normal;
+  font-weight: 400;
+  display: inline-block;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Dark mode ไม่ซ่อน icon */
+[data-theme="dark"] .social-btn i,
+[data-theme="light"] .social-btn i {
+  visibility: visible !important;
+  opacity: 1 !important;
 }
