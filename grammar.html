@@ -930,28 +930,6 @@
       </div>
     </footer>
 
-    <script src="script.js"></script>
-    <script>
-      function toggleAcc(btn) {
-        const body = btn.nextElementSibling;
-        const isOpen = btn.classList.contains("open");
-        document.querySelectorAll(".accordion-header").forEach((b) => {
-          b.classList.remove("open");
-          b.nextElementSibling.classList.remove("open");
-        });
-        if (!isOpen) {
-          btn.classList.add("open");
-          body.classList.add("open");
-        }
-      }
-      function scrollToSection(id, btn) {
-        const selector = id.startsWith("#") ? id : `#${id}`;
-        document.querySelector(selector)?.scrollIntoView({ behavior: "smooth" });
-        document
-          .querySelectorAll(".chip")
-          .forEach((c) => c.classList.remove("active"));
-        if (btn) btn.classList.add("active");
-      }
-    </script>
+    <script src="js/grammar.js"></script>
   </body>
 </html>

@@ -712,50 +712,7 @@
       </div>
     </footer>
 
-    <script src="script.js"></script>
-    <script>
-      // Word of the day rotation
-      const words = [
-        {
-          word: "Persevere",
-          type: "verb /ˌpɜːsɪˈvɪə/",
-          def: "To continue in a course of action despite difficulty.",
-          ex: '"Despite many failures, she persevered and finally succeeded."',
-        },
-        {
-          word: "Eloquent",
-          type: "adjective /ˈeləkwənt/",
-          def: "Fluent or persuasive in speaking or writing.",
-          ex: '"He gave an eloquent speech at the ceremony."',
-        },
-        {
-          word: "Diligent",
-          type: "adjective /ˈdɪlɪdʒənt/",
-          def: "Having or showing care and conscientiousness in one's work.",
-          ex: '"She is a diligent student who always does her best."',
-        },
-        {
-          word: "Resilient",
-          type: "adjective /rɪˈzɪlɪənt/",
-          def: "Able to recover quickly from difficulties; tough.",
-          ex: '"He showed a resilient spirit after the setback."',
-        },
-      ];
-      const w = words[new Date().getDay() % words.length];
-      document.getElementById("wotd-word").textContent = w.word;
-      document.getElementById("wotd-type").textContent = w.type;
-      document.getElementById("wotd-def").textContent = w.def;
-      document.getElementById("wotd-ex").textContent = w.ex;
+    <script src="js/word-combi.js"></script>
 
-      function liveSearch(q) {
-        q = q.toLowerCase();
-        document
-          .querySelectorAll(".col-card, .pv-card, .idiom-card")
-          .forEach((c) => {
-            c.style.opacity =
-              !q || c.textContent.toLowerCase().includes(q) ? "1" : "0.2";
-          });
-      }
-    </script>
   </body>
 </html>
