@@ -107,22 +107,17 @@ function initTabs() {
 function initSearch() {
   document.querySelectorAll(".search-wrap input").forEach((inp) => {
     inp.addEventListener("input", function () {
-      const q = this.value.toLowerCase();
-      if (!q) return;
-      // Highlight matching cards on same page
-      document
-        .querySelectorAll(".lesson-card, .dl-card, .ex-card")
-        .forEach((card) => {
-          const text = card.textContent.toLowerCase();
-          card.style.opacity = text.includes(q) ? "1" : "0.3";
-        });
-    });
-    inp.addEventListener("blur", function () {
-      if (!this.value) {
-        document
-          .querySelectorAll(".lesson-card, .dl-card, .ex-card")
-          .forEach((c) => (c.style.opacity = "1"));
-      }
+      const q = this.value.toLowerCase().trim();
+
+      document.querySelectorAll(".dl-card-full").forEach((card) => {
+        const text = card.textContent.toLowerCase();
+
+        if (text.includes(q) || q === "") {
+          card.style.display = "block";
+        } else {
+          card.style.display = "none";
+        }
+      });
     });
   });
 }
@@ -292,3 +287,50 @@ function showToast(name) {
     toast.classList.remove("show");
   }, 3000);
 }
+function filterFiles(q) {
+  q = q.toLowerCase().trim();
+
+  document.querySelectorAll(".dl-card-full").forEach((card) => {
+    const text = card.textContent.toLowerCase();
+
+    if (text.includes(q) || q === "") {
+      card.style.display = "block";
+    } else {
+      card.style.display = "none";
+    }
+  });
+}
+async function loadFileSizes() {
+
+  const cards = document.querySelectorAll(".dl-card-full");
+
+  for (const card of cards) {
+
+    const fileUrl = card.dataset.file;
+    const sizeText = card.querySelector(".file-size");
+
+    try {
+
+      const response = await fetch(fileUrl, {
+        method: "HEAD"
+      });
+
+      const size = response.headers.get("content-length");
+
+      if (size) {
+
+        const mb = (size / 1024 / 1024).toFixed(1);
+
+        const ext = fileUrl.split(".").pop().toUpperCase();
+
+        sizeText.textContent = `${ext} • ${mb} MB`;
+      }
+
+    } catch (err) {
+
+      sizeText.textContent = "File unavailable";
+    }
+  }
+}
+
+loadFileSizes();
