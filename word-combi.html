@@ -1,0 +1,761 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>English With Me</title>
+    <link rel="icon" type="image/x-icon" href="image/e-logo.png" />
+    <link rel="stylesheet" href="css/word-combi.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧩</text></svg>"
+    />
+  </head>
+  <body class="mesh-bg">
+    <!-- NAVBAR -->
+    <nav class="navbar">
+      <div class="navbar-inner">
+        <a href="index.html" class="nav-logo">
+          <div class="logo-icon"><img src="image/e-logo.png" alt="" /></div>
+          English With Me
+        </a>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="grammar.html">Grammar</a></li>
+          <li><a href="tenses.html">Tenses</a></li>
+          <li><a href="word-combi.html">Word Combinations</a></li>
+          <li><a href="exercises.html">Exercises</a></li>
+          <li><a href="downloads.html">Downloads</a></li>
+        </ul>
+        <div class="nav-right">
+          <div class="search-wrap">
+            <input type="text" placeholder="Search lessons…" />
+            <i class="fa fa-search search-icon"></i>
+          </div>
+          <button
+            class="dark-toggle"
+            onclick="toggleDark()"
+            title="Toggle dark mode"
+          >
+            🌙
+          </button>
+          <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+      <div class="mobile-menu" id="mobile-menu">
+        <a href="index.html">🏠 Home</a>
+        <a href="grammar.html">📖 Grammar</a>
+        <a href="tenses.html">⏱ Tenses</a>
+        <a href="word-combi.html">🧩 Word Combinations</a>
+        <a href="exercises.html">✏️ Exercises</a>
+        <a href="downloads.html">📥 Downloads</a>
+      </div>
+    </nav>
+
+    <!-- PAGE HERO -->
+    <div class="page-hero mesh-bg">
+      <div class="container">
+        <span class="section-label">🧩 Word Combination</span>
+        <h1>Words &amp; Phrases</h1>
+        <p>
+          Collocations, phrasal verbs, idioms and word-building — master natural
+          English expression.
+        </p>
+        <div class="big-search">
+          <input
+            type="text"
+            id="word-search"
+            placeholder="Search a word or phrase…"
+            oninput="liveSearch(this.value)"
+          />
+          <button
+            onclick="liveSearch(document.getElementById('word-search').value)"
+          >
+            <i class="fa fa-search"></i> Search
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- WORD OF THE DAY -->
+    <section style="padding: 50px 0 0">
+      <div class="container">
+        <div class="wotd reveal">
+          <div class="wotd-label">🌟 Word of the Day</div>
+          <div class="wotd-word" id="wotd-word">Persevere</div>
+          <div class="wotd-type" id="wotd-type">verb /ˌpɜːsɪˈvɪə/</div>
+          <div class="wotd-def" id="wotd-def">
+            To continue in a course of action even in the face of difficulty or
+            with little prospect of success.
+          </div>
+          <div class="wotd-ex" id="wotd-ex">
+            "Despite many failures, she persevered and finally succeeded."
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ COLLOCATIONS ═══ -->
+    <section id="collocations">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-label">Collocations</span>
+          <h2 class="section-title">Common Collocations</h2>
+          <p class="section-sub">
+            Words that naturally go together — learning collocations makes your
+            English sound fluent and native.
+          </p>
+        </div>
+        <div class="filter-tabs" data-target=".col-card">
+          <button class="tab-btn active" data-filter="all">All</button>
+          <button class="tab-btn" data-filter="verb-noun">Verb + Noun</button>
+          <button class="tab-btn" data-filter="adj-noun">Adj + Noun</button>
+          <button class="tab-btn" data-filter="adv-adj">Adv + Adj</button>
+        </div>
+        <div class="col-grid">
+          <div class="col-card glass reveal" data-cat="verb-noun">
+            <div class="col-cat">Verb + Noun</div>
+            <div class="col-word">make / do</div>
+            <div class="col-list">
+              <div class="col-item">
+                <span class="col-combo">make a decision</span
+                ><span class="col-meaning">decide something</span>
+              </div>
+              <div class="col-item">
+                <span class="col-combo">make an effort</span
+                ><span class="col-meaning">try hard</span>
+              </div>
+              <div class="col-item">
+                <span class="col-combo">do homework</span
+                ><span class="col-meaning">complete assignments</span>
+              </div>
+              <div class="col-item">
+                <span class="col-combo">do a favour</span
+                ><span class="col-meaning">help someone</span>
+              </div>
+              <div class="col-item">
+                <span class="col-combo">make a mistake</span
+                ><span class="col-meaning">be wrong</span>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-card glass reveal reveal-delay-1"
+            data-cat="verb-noun"
+          >
+            <div class="col-cat">Verb + Noun</div>
+            <div class="col-word">take / have</div>
+            <div class="col-list">
+              <div class="col-item">
+                <span class="col-combo">take a break</span
+                ><span class="col-meaning">rest briefly</span>
+              </div>
+              <div class="col-item">
+                <span class="col-combo">take a photo</span
+                ><span class="col-meaning">photograph</span>
+              </div>
+              <div class="col-item">
+                <span class="col-combo">have lunch</span
+                ><span class="col-meaning">eat midday meal</span>
+              </div>
+              <div class="col-item">
+                <span class="col-combo">have a meeting</span
+                ><span class="col-meaning">meet formally</span>
+              </div>
+              <div class="col-item">
+                <span class="col-combo">take part in</span
+                ><span class="col-meaning">participate</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-card glass reveal reveal-delay-2" data-cat="adj-noun">
+            <div class="col-cat">Adjective + Noun</div>
+            <div class="col-word">strong / heavy</div>
+            <div class="col-list">
+              <div class="col-item">
+                <span class="col-combo">strong opinion</span
+                ><span class="col-meaning">firm belief</span>
+              </div>
+              <div class="col-item">
+                <span class="col-combo">strong coffee</span
+                ><span class="col-meaning">intense coffee</span>
+              </div>
+              <div class="col-item">
+                <span class="col-combo">heavy rain</span
+                ><span class="col-meaning">very hard rain</span>
+              </div>
+              <div class="col-item">
+                <span class="col-combo">heavy traffic</span
+                ><span class="col-meaning">lots of vehicles</span>
+              </div>
+              <div class="col-item">
+                <span class="col-combo">strong accent</span
+                ><span class="col-meaning">noticeable accent</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-card glass reveal" data-cat="adv-adj">
+            <div class="col-cat">Adverb + Adjective</div>
+            <div class="col-word">absolutely / completely</div>
+            <div class="col-list">
+              <div class="col-item">
+                <span class="col-combo">absolutely certain</span
+                ><span class="col-meaning">100% sure</span>
+              </div>
+              <div class="col-item">
+                <span class="col-combo">completely wrong</span
+                ><span class="col-meaning">totally incorrect</span>
+              </div>
+              <div class="col-item">
+                <span class="col-combo">deeply sorry</span
+                ><span class="col-meaning">very apologetic</span>
+              </div>
+              <div class="col-item">
+                <span class="col-combo">highly unlikely</span
+                ><span class="col-meaning">probably not</span>
+              </div>
+              <div class="col-item">
+                <span class="col-combo">perfectly clear</span
+                ><span class="col-meaning">very obvious</span>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-card glass reveal reveal-delay-1"
+            data-cat="verb-noun"
+          >
+            <div class="col-cat">Verb + Noun</div>
+            <div class="col-word">pay / give</div>
+            <div class="col-list">
+              <div class="col-item">
+                <span class="col-combo">pay attention</span
+                ><span class="col-meaning">focus on something</span>
+              </div>
+              <div class="col-item">
+                <span class="col-combo">pay a visit</span
+                ><span class="col-meaning">go see someone</span>
+              </div>
+              <div class="col-item">
+                <span class="col-combo">give a speech</span
+                ><span class="col-meaning">talk formally</span>
+              </div>
+              <div class="col-item">
+                <span class="col-combo">give advice</span
+                ><span class="col-meaning">recommend something</span>
+              </div>
+              <div class="col-item">
+                <span class="col-combo">give permission</span
+                ><span class="col-meaning">allow something</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-card glass reveal reveal-delay-2" data-cat="adj-noun">
+            <div class="col-cat">Adjective + Noun</div>
+            <div class="col-word">fast / quick</div>
+            <div class="col-list">
+              <div class="col-item">
+                <span class="col-combo">fast food</span
+                ><span class="col-meaning">quickly prepared food</span>
+              </div>
+              <div class="col-item">
+                <span class="col-combo">fast asleep</span
+                ><span class="col-meaning">deeply sleeping</span>
+              </div>
+              <div class="col-item">
+                <span class="col-combo">quick decision</span
+                ><span class="col-meaning">rapid choice</span>
+              </div>
+              <div class="col-item">
+                <span class="col-combo">quick glance</span
+                ><span class="col-meaning">brief look</span>
+              </div>
+              <div class="col-item">
+                <span class="col-combo">quick meal</span
+                ><span class="col-meaning">fast food</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ PHRASAL VERBS ═══ -->
+    <section id="phrasal" style="background: var(--clr-bg2)">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-label">Phrasal Verbs</span>
+          <h2 class="section-title">Common Phrasal Verbs</h2>
+          <p class="section-sub">
+            Phrasal verbs are a combination of a verb + preposition/adverb that
+            create a new meaning.
+          </p>
+        </div>
+        <div class="filter-tabs" data-target=".pv-card">
+          <button class="tab-btn active" data-filter="all">All</button>
+          <button class="tab-btn" data-filter="get">get</button>
+          <button class="tab-btn" data-filter="look">look</button>
+          <button class="tab-btn" data-filter="take">take</button>
+          <button class="tab-btn" data-filter="give">give</button>
+          <button class="tab-btn" data-filter="put">put</button>
+        </div>
+        <div class="pv-grid">
+          <div class="pv-card glass reveal" data-cat="get">
+            <div class="pv-verb">get up</div>
+            <div class="pv-def">To rise from bed or a seat</div>
+            <div class="pv-ex">"I get up at 6 am every day."</div>
+          </div>
+          <div class="pv-card glass reveal reveal-delay-1" data-cat="get">
+            <div class="pv-verb">get along</div>
+            <div class="pv-def">
+              To have a friendly relationship with someone
+            </div>
+            <div class="pv-ex">"She gets along well with her classmates."</div>
+          </div>
+          <div class="pv-card glass reveal reveal-delay-2" data-cat="get">
+            <div class="pv-verb">get over</div>
+            <div class="pv-def">To recover from an illness or difficulty</div>
+            <div class="pv-ex">"It took weeks to get over the cold."</div>
+          </div>
+          <div class="pv-card glass reveal" data-cat="look">
+            <div class="pv-verb">look up</div>
+            <div class="pv-def">To search for information</div>
+            <div class="pv-ex">"Look it up in the dictionary."</div>
+          </div>
+          <div class="pv-card glass reveal reveal-delay-1" data-cat="look">
+            <div class="pv-verb">look forward to</div>
+            <div class="pv-def">To feel excited about a future event</div>
+            <div class="pv-ex">"I look forward to seeing you."</div>
+          </div>
+          <div class="pv-card glass reveal reveal-delay-2" data-cat="look">
+            <div class="pv-verb">look after</div>
+            <div class="pv-def">To take care of something or someone</div>
+            <div class="pv-ex">"She looks after her younger brother."</div>
+          </div>
+          <div class="pv-card glass reveal" data-cat="take">
+            <div class="pv-verb">take off</div>
+            <div class="pv-def">To leave the ground / remove clothing</div>
+            <div class="pv-ex">"The plane took off at noon."</div>
+          </div>
+          <div class="pv-card glass reveal reveal-delay-1" data-cat="take">
+            <div class="pv-verb">take over</div>
+            <div class="pv-def">To assume control of something</div>
+            <div class="pv-ex">"She took over the project."</div>
+          </div>
+          <div class="pv-card glass reveal reveal-delay-2" data-cat="give">
+            <div class="pv-verb">give up</div>
+            <div class="pv-def">To stop trying; to surrender</div>
+            <div class="pv-ex">"Never give up on your dreams."</div>
+          </div>
+          <div class="pv-card glass reveal" data-cat="give">
+            <div class="pv-verb">give away</div>
+            <div class="pv-def">To give something to others for free</div>
+            <div class="pv-ex">"She gave away her old books."</div>
+          </div>
+          <div class="pv-card glass reveal reveal-delay-1" data-cat="put">
+            <div class="pv-verb">put off</div>
+            <div class="pv-def">To postpone or delay something</div>
+            <div class="pv-ex">"Don't put off what you can do today."</div>
+          </div>
+          <div class="pv-card glass reveal reveal-delay-2" data-cat="put">
+            <div class="pv-verb">put up with</div>
+            <div class="pv-def">To tolerate something unpleasant</div>
+            <div class="pv-ex">"I can't put up with the noise."</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ IDIOMS ═══ -->
+    <section id="idioms">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-label">Idioms</span>
+          <h2 class="section-title">Popular English Idioms</h2>
+          <p class="section-sub">
+            Idioms are phrases whose meaning cannot be understood from the
+            individual words.
+          </p>
+        </div>
+        <div class="idiom-grid">
+          <div class="idiom-card glass reveal">
+            <div class="idiom-icon">🌊</div>
+            <div class="idiom-phrase">Break the ice</div>
+            <div class="idiom-meaning">
+              To initiate conversation in an awkward situation
+            </div>
+            <div class="idiom-ex">
+              "He told a joke to break the ice at the meeting."
+            </div>
+          </div>
+          <div class="idiom-card glass reveal reveal-delay-1">
+            <div class="idiom-icon">🌧</div>
+            <div class="idiom-phrase">Under the weather</div>
+            <div class="idiom-meaning">Feeling unwell or sick</div>
+            <div class="idiom-ex">
+              "I'm feeling a bit under the weather today."
+            </div>
+          </div>
+          <div class="idiom-card glass reveal reveal-delay-2">
+            <div class="idiom-icon">🪣</div>
+            <div class="idiom-phrase">Hit the nail on the head</div>
+            <div class="idiom-meaning">
+              To describe exactly what is causing a situation
+            </div>
+            <div class="idiom-ex">
+              "You've hit the nail on the head with that analysis."
+            </div>
+          </div>
+          <div class="idiom-card glass reveal">
+            <div class="idiom-icon">🔥</div>
+            <div class="idiom-phrase">Burn the midnight oil</div>
+            <div class="idiom-meaning">
+              To work or study late into the night
+            </div>
+            <div class="idiom-ex">
+              "She burned the midnight oil before the exam."
+            </div>
+          </div>
+          <div class="idiom-card glass reveal reveal-delay-1">
+            <div class="idiom-icon">🎂</div>
+            <div class="idiom-phrase">Piece of cake</div>
+            <div class="idiom-meaning">Something that is very easy to do</div>
+            <div class="idiom-ex">"The test was a piece of cake for her."</div>
+          </div>
+          <div class="idiom-card glass reveal reveal-delay-2">
+            <div class="idiom-icon">🐟</div>
+            <div class="idiom-phrase">Bite off more than you can chew</div>
+            <div class="idiom-meaning">To take on more than you can handle</div>
+            <div class="idiom-ex">
+              "He bit off more than he could chew with that project."
+            </div>
+          </div>
+          <div class="idiom-card glass reveal">
+            <div class="idiom-icon">⛽</div>
+            <div class="idiom-phrase">Add fuel to the fire</div>
+            <div class="idiom-meaning">To make a bad situation worse</div>
+            <div class="idiom-ex">
+              "His comments only added fuel to the fire."
+            </div>
+          </div>
+          <div class="idiom-card glass reveal reveal-delay-1">
+            <div class="idiom-icon">🧱</div>
+            <div class="idiom-phrase">Hit a brick wall</div>
+            <div class="idiom-meaning">
+              To reach a point where no progress is possible
+            </div>
+            <div class="idiom-ex">
+              "Negotiations hit a brick wall after hours of talks."
+            </div>
+          </div>
+          <div class="idiom-card glass reveal reveal-delay-2">
+            <div class="idiom-icon">🌟</div>
+            <div class="idiom-phrase">Once in a blue moon</div>
+            <div class="idiom-meaning">Something that happens very rarely</div>
+            <div class="idiom-ex">"He only visits once in a blue moon."</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ PREFIXES & SUFFIXES ═══ -->
+    <section style="background: var(--clr-bg2)" id="affixes">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="section-label">Word Building</span>
+          <h2 class="section-title">Prefixes &amp; Suffixes</h2>
+          <p class="section-sub">
+            Understanding affixes helps you guess the meaning of thousands of
+            new words.
+          </p>
+        </div>
+        <div class="affix-grid">
+          <div
+            class="glass reveal"
+            style="border-radius: var(--radius-md); overflow: hidden"
+          >
+            <div
+              style="
+                padding: 14px 18px;
+                background: linear-gradient(
+                  135deg,
+                  var(--clr-primary),
+                  var(--clr-primary2)
+                );
+                color: #fff;
+                font-weight: 700;
+                font-family: var(--font-display);
+              "
+            >
+              Common Prefixes
+            </div>
+            <table class="affix-table">
+              <thead>
+                <tr>
+                  <th>Prefix</th>
+                  <th>Meaning</th>
+                  <th>Example</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>un-</td>
+                  <td>not / reverse</td>
+                  <td>unhappy, undo</td>
+                </tr>
+                <tr>
+                  <td>re-</td>
+                  <td>again</td>
+                  <td>rewrite, restart</td>
+                </tr>
+                <tr>
+                  <td>pre-</td>
+                  <td>before</td>
+                  <td>preview, prepare</td>
+                </tr>
+                <tr>
+                  <td>dis-</td>
+                  <td>not / opposite</td>
+                  <td>disagree, dislike</td>
+                </tr>
+                <tr>
+                  <td>mis-</td>
+                  <td>wrongly</td>
+                  <td>misuse, mistake</td>
+                </tr>
+                <tr>
+                  <td>over-</td>
+                  <td>too much</td>
+                  <td>overeat, overwork</td>
+                </tr>
+                <tr>
+                  <td>inter-</td>
+                  <td>between</td>
+                  <td>international</td>
+                </tr>
+                <tr>
+                  <td>semi-</td>
+                  <td>half</td>
+                  <td>semicircle</td>
+                </tr>
+                <tr>
+                  <td>multi-</td>
+                  <td>many</td>
+                  <td>multilingual</td>
+                </tr>
+                <tr>
+                  <td>sub-</td>
+                  <td>under / below</td>
+                  <td>subway, subtitle</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div
+            class="glass reveal reveal-delay-1"
+            style="border-radius: var(--radius-md); overflow: hidden"
+          >
+            <div
+              style="
+                padding: 14px 18px;
+                background: linear-gradient(
+                  135deg,
+                  var(--clr-primary2),
+                  var(--clr-accent)
+                );
+                color: #fff;
+                font-weight: 700;
+                font-family: var(--font-display);
+              "
+            >
+              Common Suffixes
+            </div>
+            <table class="affix-table">
+              <thead>
+                <tr>
+                  <th>Suffix</th>
+                  <th>Meaning</th>
+                  <th>Example</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>-tion / -sion</td>
+                  <td>action / state</td>
+                  <td>education, decision</td>
+                </tr>
+                <tr>
+                  <td>-ness</td>
+                  <td>state / quality</td>
+                  <td>happiness, kindness</td>
+                </tr>
+                <tr>
+                  <td>-ful</td>
+                  <td>full of</td>
+                  <td>beautiful, helpful</td>
+                </tr>
+                <tr>
+                  <td>-less</td>
+                  <td>without</td>
+                  <td>careless, hopeless</td>
+                </tr>
+                <tr>
+                  <td>-er / -or</td>
+                  <td>person who</td>
+                  <td>teacher, actor</td>
+                </tr>
+                <tr>
+                  <td>-ly</td>
+                  <td>in a manner of</td>
+                  <td>quickly, slowly</td>
+                </tr>
+                <tr>
+                  <td>-ment</td>
+                  <td>result / action</td>
+                  <td>achievement</td>
+                </tr>
+                <tr>
+                  <td>-ous / -ious</td>
+                  <td>having quality</td>
+                  <td>famous, serious</td>
+                </tr>
+                <tr>
+                  <td>-able / -ible</td>
+                  <td>capable of</td>
+                  <td>readable, visible</td>
+                </tr>
+                <tr>
+                  <td>-ity</td>
+                  <td>quality / state</td>
+                  <td>creativity, ability</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section>
+      <div class="container">
+        <div class="cta-banner reveal">
+          <h2>Ready to Practice?</h2>
+          <p>
+            Put your word knowledge to the test with our interactive exercises.
+          </p>
+          <a
+            href="exercises.html"
+            class="btn"
+            style="
+              background: #fff;
+              color: var(--clr-primary);
+              font-weight: 700;
+            "
+          >
+            <i class="fa fa-pencil"></i> Start Exercises
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="logo">📗 EnglishEdu</div>
+          <p>
+            A free English learning platform for Thai students and beginners
+            worldwide.
+          </p>
+          <div class="social-row">
+            <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-btn"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-btn"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4>Topics</h4>
+          <ul>
+            <li><a href="#collocations">Collocations</a></li>
+            <li><a href="#phrasal">Phrasal Verbs</a></li>
+            <li><a href="#idioms">Idioms</a></li>
+            <li><a href="#affixes">Prefixes &amp; Suffixes</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Learn</h4>
+          <ul>
+            <li><a href="grammar.html">Grammar</a></li>
+            <li><a href="tenses.html">Tenses</a></li>
+            <li><a href="exercises.html">Exercises</a></li>
+            <li><a href="downloads.html">Downloads</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="downloads.html">Vocabulary PDF</a></li>
+            <li><a href="exercises.html">Mini Quiz</a></li>
+            <li><a href="index.html">Home</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        © 2025 EnglishEdu · Free English Learning for Everyone
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+      // Word of the day rotation
+      const words = [
+        {
+          word: "Persevere",
+          type: "verb /ˌpɜːsɪˈvɪə/",
+          def: "To continue in a course of action despite difficulty.",
+          ex: '"Despite many failures, she persevered and finally succeeded."',
+        },
+        {
+          word: "Eloquent",
+          type: "adjective /ˈeləkwənt/",
+          def: "Fluent or persuasive in speaking or writing.",
+          ex: '"He gave an eloquent speech at the ceremony."',
+        },
+        {
+          word: "Diligent",
+          type: "adjective /ˈdɪlɪdʒənt/",
+          def: "Having or showing care and conscientiousness in one's work.",
+          ex: '"She is a diligent student who always does her best."',
+        },
+        {
+          word: "Resilient",
+          type: "adjective /rɪˈzɪlɪənt/",
+          def: "Able to recover quickly from difficulties; tough.",
+          ex: '"He showed a resilient spirit after the setback."',
+        },
+      ];
+      const w = words[new Date().getDay() % words.length];
+      document.getElementById("wotd-word").textContent = w.word;
+      document.getElementById("wotd-type").textContent = w.type;
+      document.getElementById("wotd-def").textContent = w.def;
+      document.getElementById("wotd-ex").textContent = w.ex;
+
+      function liveSearch(q) {
+        q = q.toLowerCase();
+        document
+          .querySelectorAll(".col-card, .pv-card, .idiom-card")
+          .forEach((c) => {
+            c.style.opacity =
+              !q || c.textContent.toLowerCase().includes(q) ? "1" : "0.2";
+          });
+      }
+    </script>
+  </body>
+</html>

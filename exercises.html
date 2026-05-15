@@ -1,0 +1,782 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>English With Me</title>
+    <link rel="icon" type="image/x-icon" href="image/e-logo.png"/>
+    <link rel="stylesheet" href="css/exercises.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✏️</text></svg>"
+    />
+  </head>
+  <body class="mesh-bg">
+    <!-- NAVBAR -->
+    <nav class="navbar">
+      <div class="navbar-inner">
+        <a href="index.html" class="nav-logo">
+          <div class="logo-icon"><img src="image/e-logo.png" alt=""></div>
+          English With Me
+        </a>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="grammar.html">Grammar</a></li>
+          <li><a href="tenses.html">Tenses</a></li>
+          <li><a href="word-combi.html">Word Combinations</a></li>
+          <li><a href="exercises.html">Exercises</a></li>
+          <li><a href="downloads.html">Downloads</a></li>
+        </ul>
+        <div class="nav-right">
+          <div class="search-wrap">
+            <input type="text" placeholder="Search lessons…" />
+            <i class="fa fa-search search-icon"></i>
+          </div>
+          <button
+            class="dark-toggle"
+            onclick="toggleDark()"
+            title="Toggle dark mode"
+          >
+            🌙
+          </button>
+          <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+      <div class="mobile-menu" id="mobile-menu">
+        <a href="index.html">🏠 Home</a>
+        <a href="grammar.html">📖 Grammar</a>
+        <a href="tenses.html">⏱ Tenses</a>
+        <a href="word-combi.html">🧩 Word Combinations</a>
+        <a href="exercises.html">✏️ Exercises</a>
+        <a href="downloads.html">📥 Downloads</a>
+      </div>
+    </nav>
+
+    <!-- PAGE HERO -->
+    <div class="page-hero mesh-bg">
+      <div class="container">
+        <span class="section-label">✏️ Exercises</span>
+        <h1>Interactive Exercises</h1>
+        <p>แบบฝึกหัดสนุก ทดสอบความรู้ภาษาอังกฤษ พร้อมเฉลยทันที</p>
+      </div>
+    </div>
+
+    <!-- SCOREBOARD -->
+    <section style="padding: 44px 0 0">
+      <div class="container">
+        <div class="scoreboard">
+          <div class="score-box glass reveal">
+            <div class="score-num" id="total-score">0</div>
+            <div class="score-lbl">Total Points</div>
+          </div>
+          <div class="score-box glass reveal reveal-delay-1">
+            <div class="score-num" id="correct-count">0</div>
+            <div class="score-lbl">Correct Answers</div>
+          </div>
+          <div class="score-box glass reveal reveal-delay-2">
+            <div class="score-num" id="streak-count">0</div>
+            <div class="score-lbl">Current Streak 🔥</div>
+          </div>
+        </div>
+
+        <!-- Exercise Navigation -->
+        <div class="ex-nav reveal">
+          <button class="ex-nav-btn active" onclick="switchPanel('quiz')">
+            🎯 Grammar Quiz
+          </button>
+          <button class="ex-nav-btn" onclick="switchPanel('fillin')">
+            ✍️ Fill in the Blank
+          </button>
+          <button class="ex-nav-btn" onclick="switchPanel('match')">
+            🔗 Matching
+          </button>
+          <button class="ex-nav-btn" onclick="switchPanel('truefalse')">
+            ✅ True / False
+          </button>
+        </div>
+
+        <!-- ═══ PANEL 1: Grammar Quiz ═══ -->
+        <div class="ex-panel active" id="panel-quiz">
+          <div class="quiz-wrap reveal" id="quiz-wrap">
+            <!-- rendered by script.js -->
+            <div
+              style="text-align: center; padding: 40px; color: var(--clr-muted)"
+            >
+              <i class="fa fa-spinner fa-spin"></i> Loading quiz…
+            </div>
+          </div>
+        </div>
+
+        <!-- ═══ PANEL 2: Fill in the Blank ═══ -->
+        <div class="ex-panel" id="panel-fillin">
+          <div
+            style="
+              margin-bottom: 28px;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+            "
+          >
+            <div>
+              <h3 style="font-size: 1.2rem">Fill in the Blank</h3>
+              <p style="font-size: 0.85rem; color: var(--clr-muted)">
+                Type the missing word in each sentence.
+              </p>
+            </div>
+            <button class="btn btn-outline btn-sm" onclick="checkBlanks()">
+              <i class="fa fa-check"></i> Check Answers
+            </button>
+          </div>
+          <div class="blank-card glass">
+            <div class="blank-q">
+              1. She ___<input
+                class="blank-input"
+                data-answer="goes"
+                placeholder="?"
+              />___ to school by bus every day.
+            </div>
+            <div class="blank-hint">
+              Hint: Simple Present — subject is "She"
+            </div>
+            <div class="blank-answer">✅ Answer: goes</div>
+          </div>
+          <div class="blank-card glass">
+            <div class="blank-q">
+              2. They ___<input
+                class="blank-input"
+                data-answer="were playing"
+                placeholder="?"
+              />___ football when it started to rain.
+            </div>
+            <div class="blank-hint">Hint: Past Continuous</div>
+            <div class="blank-answer">✅ Answer: were playing</div>
+          </div>
+          <div class="blank-card glass">
+            <div class="blank-q">
+              3. I have ___<input
+                class="blank-input"
+                data-answer="never"
+                placeholder="?"
+              />___ been to Japan.
+            </div>
+            <div class="blank-hint">
+              Hint: Present Perfect — frequency adverb (negative)
+            </div>
+            <div class="blank-answer">✅ Answer: never</div>
+          </div>
+          <div class="blank-card glass">
+            <div class="blank-q">
+              4. By the time he arrived, she ___<input
+                class="blank-input"
+                data-answer="had left"
+                placeholder="?"
+              />___.
+            </div>
+            <div class="blank-hint">Hint: Past Perfect</div>
+            <div class="blank-answer">✅ Answer: had left</div>
+          </div>
+          <div class="blank-card glass">
+            <div class="blank-q">
+              5. If I ___<input
+                class="blank-input"
+                data-answer="were"
+                placeholder="?"
+              />___ rich, I would travel the world.
+            </div>
+            <div class="blank-hint">
+              Hint: Second Conditional — use past tense of "be"
+            </div>
+            <div class="blank-answer">✅ Answer: were</div>
+          </div>
+          <div class="blank-card glass">
+            <div class="blank-q">
+              6. The letter ___<input
+                class="blank-input"
+                data-answer="was written"
+                placeholder="?"
+              />___ by Tom last night.
+            </div>
+            <div class="blank-hint">Hint: Passive Voice — Simple Past</div>
+            <div class="blank-answer">✅ Answer: was written</div>
+          </div>
+          <div id="blank-result" class="result-banner">
+            <div style="font-size: 2rem; margin-bottom: 8px">🎉</div>
+            <h3 style="margin-bottom: 6px">Results</h3>
+            <p id="blank-score-text" style="color: var(--clr-muted)"></p>
+          </div>
+        </div>
+
+        <!-- ═══ PANEL 3: Matching ═══ -->
+        <div class="ex-panel" id="panel-match">
+          <div style="margin-bottom: 28px">
+            <h3 style="font-size: 1.2rem; margin-bottom: 6px">
+              Matching Exercise
+            </h3>
+            <p style="font-size: 0.85rem; color: var(--clr-muted)">
+              Click a word on the left, then click its match on the right. Match
+              the tense with its correct description.
+            </p>
+          </div>
+          <div
+            class="glass"
+            style="border-radius: var(--radius-md); padding: 28px"
+          >
+            <div class="match-grid" id="match-grid">
+              <div class="match-left" id="match-left"></div>
+              <div class="match-right" id="match-right"></div>
+            </div>
+            <div
+              id="match-result"
+              class="result-banner"
+              style="margin-top: 20px"
+            >
+              <div style="font-size: 2rem; margin-bottom: 8px">🎯</div>
+              <h3>All matched!</h3>
+              <p style="color: var(--clr-muted)">
+                Excellent work! You matched all tenses correctly.
+              </p>
+              <button
+                class="btn btn-primary btn-sm"
+                onclick="resetMatch()"
+                style="margin-top: 12px"
+              >
+                Play Again
+              </button>
+            </div>
+            <div style="margin-top: 20px; text-align: center">
+              <button class="btn btn-outline btn-sm" onclick="resetMatch()">
+                <i class="fa fa-refresh"></i> Reset
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ═══ PANEL 4: True/False ═══ -->
+        <div class="ex-panel" id="panel-truefalse">
+          <div style="margin-bottom: 28px">
+            <h3 style="font-size: 1.2rem; margin-bottom: 6px">True or False</h3>
+            <p style="font-size: 0.85rem; color: var(--clr-muted)">
+              Decide if each grammar statement is True or False.
+            </p>
+          </div>
+          <div id="tf-container"></div>
+          <div id="tf-result" class="result-banner">
+            <div style="font-size: 2rem; margin-bottom: 8px">📊</div>
+            <h3 style="margin-bottom: 6px">Quiz Complete!</h3>
+            <p id="tf-score-text" style="color: var(--clr-muted)"></p>
+            <button
+              class="btn btn-primary btn-sm"
+              onclick="resetTF()"
+              style="margin-top: 12px"
+            >
+              Try Again
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXERCISE CARDS OVERVIEW -->
+    <section style="background: var(--clr-bg2)">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="section-label">All Exercises</span>
+          <h2 class="section-title">Practice by Topic</h2>
+          <p class="section-sub">
+            Choose a specific area to focus your practice.
+          </p>
+        </div>
+        <div class="ex-grid">
+          <div class="ex-card glass reveal">
+            <div class="ex-type">Grammar</div>
+            <h3>Parts of Speech</h3>
+            <p>Identify nouns, verbs, adjectives and more in sentences.</p>
+            <div class="progress-wrap">
+              <div class="progress-label">
+                <span>Students completed</span><span>78%</span>
+              </div>
+              <div class="progress-bar">
+                <div
+                  class="progress-fill"
+                  data-width="78"
+                  style="width: 0%"
+                ></div>
+              </div>
+            </div>
+            <div>
+              <span class="diff-badge diff-easy">Easy</span
+              ><span style="font-size: 0.8rem; color: var(--clr-muted)"
+                >12 questions</span
+              >
+            </div>
+            <div style="margin-top: 14px">
+              <button
+                class="btn btn-primary btn-sm"
+                onclick="
+                  switchPanel('quiz');
+                  document.querySelector('.ex-nav-btn').click();
+                "
+              >
+                <i class="fa fa-play"></i> Start
+              </button>
+            </div>
+          </div>
+          <div class="ex-card glass reveal reveal-delay-1">
+            <div class="ex-type">Tenses</div>
+            <h3>12 Tenses Mixed Quiz</h3>
+            <p>
+              Identify and use the correct tense in context-based questions.
+            </p>
+            <div class="progress-wrap">
+              <div class="progress-label">
+                <span>Students completed</span><span>65%</span>
+              </div>
+              <div class="progress-bar">
+                <div
+                  class="progress-fill"
+                  data-width="65"
+                  style="width: 0%"
+                ></div>
+              </div>
+            </div>
+            <div>
+              <span class="diff-badge diff-med">Medium</span
+              ><span style="font-size: 0.8rem; color: var(--clr-muted)"
+                >15 questions</span
+              >
+            </div>
+            <div style="margin-top: 14px">
+              <button
+                class="btn btn-primary btn-sm"
+                onclick="switchPanel('quiz')"
+              >
+                <i class="fa fa-play"></i> Start
+              </button>
+            </div>
+          </div>
+          <div class="ex-card glass reveal reveal-delay-2">
+            <div class="ex-type">Vocabulary</div>
+            <h3>Word in Context</h3>
+            <p>Choose the correct vocabulary word for each sentence.</p>
+            <div class="progress-wrap">
+              <div class="progress-label">
+                <span>Students completed</span><span>52%</span>
+              </div>
+              <div class="progress-bar">
+                <div
+                  class="progress-fill"
+                  data-width="52"
+                  style="width: 0%"
+                ></div>
+              </div>
+            </div>
+            <div>
+              <span class="diff-badge diff-med">Medium</span
+              ><span style="font-size: 0.8rem; color: var(--clr-muted)"
+                >10 questions</span
+              >
+            </div>
+            <div style="margin-top: 14px">
+              <button class="btn btn-primary btn-sm">
+                <i class="fa fa-play"></i> Start
+              </button>
+            </div>
+          </div>
+          <div class="ex-card glass reveal">
+            <div class="ex-type">Writing</div>
+            <h3>Sentence Correction</h3>
+            <p>Find and correct the grammar errors in each sentence.</p>
+            <div class="progress-wrap">
+              <div class="progress-label">
+                <span>Students completed</span><span>41%</span>
+              </div>
+              <div class="progress-bar">
+                <div
+                  class="progress-fill"
+                  data-width="41"
+                  style="width: 0%"
+                ></div>
+              </div>
+            </div>
+            <div>
+              <span class="diff-badge diff-hard">Hard</span
+              ><span style="font-size: 0.8rem; color: var(--clr-muted)"
+                >8 questions</span
+              >
+            </div>
+            <div style="margin-top: 14px">
+              <button
+                class="btn btn-primary btn-sm"
+                onclick="switchPanel('fillin')"
+              >
+                <i class="fa fa-play"></i> Start
+              </button>
+            </div>
+          </div>
+          <div class="ex-card glass reveal reveal-delay-1">
+            <div class="ex-type">Matching</div>
+            <h3>Tense Matching Game</h3>
+            <p>Match each tense name with its correct formula and example.</p>
+            <div class="progress-wrap">
+              <div class="progress-label">
+                <span>Students completed</span><span>88%</span>
+              </div>
+              <div class="progress-bar">
+                <div
+                  class="progress-fill"
+                  data-width="88"
+                  style="width: 0%"
+                ></div>
+              </div>
+            </div>
+            <div>
+              <span class="diff-badge diff-easy">Easy</span
+              ><span style="font-size: 0.8rem; color: var(--clr-muted)"
+                >8 pairs</span
+              >
+            </div>
+            <div style="margin-top: 14px">
+              <button
+                class="btn btn-primary btn-sm"
+                onclick="switchPanel('match')"
+              >
+                <i class="fa fa-play"></i> Start
+              </button>
+            </div>
+          </div>
+          <div class="ex-card glass reveal reveal-delay-2">
+            <div class="ex-type">True / False</div>
+            <h3>Grammar Statements</h3>
+            <p>Decide if each grammar rule statement is true or false.</p>
+            <div class="progress-wrap">
+              <div class="progress-label">
+                <span>Students completed</span><span>73%</span>
+              </div>
+              <div class="progress-bar">
+                <div
+                  class="progress-fill"
+                  data-width="73"
+                  style="width: 0%"
+                ></div>
+              </div>
+            </div>
+            <div>
+              <span class="diff-badge diff-easy">Easy</span
+              ><span style="font-size: 0.8rem; color: var(--clr-muted)"
+                >10 statements</span
+              >
+            </div>
+            <div style="margin-top: 14px">
+              <button
+                class="btn btn-primary btn-sm"
+                onclick="switchPanel('truefalse')"
+              >
+                <i class="fa fa-play"></i> Start
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section>
+      <div class="container">
+        <div class="cta-banner reveal">
+          <h2>Download Practice Sheets</h2>
+          <p>Get printable exercise worksheets for offline practice.</p>
+          <a
+            href="downloads.html"
+            class="btn"
+            style="
+              background: #fff;
+              color: var(--clr-primary);
+              font-weight: 700;
+            "
+          >
+            <i class="fa fa-download"></i> Get Worksheets
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="logo">📗 EnglishEdu</div>
+          <p>
+            A free English learning platform for Thai students and beginners
+            worldwide.
+          </p>
+          <div class="social-row">
+            <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-btn"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-btn"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4>Exercises</h4>
+          <ul>
+            <li><a href="#" onclick="switchPanel('quiz')">Grammar Quiz</a></li>
+            <li>
+              <a href="#" onclick="switchPanel('fillin')">Fill in the Blank</a>
+            </li>
+            <li><a href="#" onclick="switchPanel('match')">Matching</a></li>
+            <li>
+              <a href="#" onclick="switchPanel('truefalse')">True/False</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4>Learn</h4>
+          <ul>
+            <li><a href="grammar.html">Grammar</a></li>
+            <li><a href="tenses.html">Tenses</a></li>
+            <li><a href="word-combi.html">Word Combination</a></li>
+            <li><a href="downloads.html">Downloads</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="downloads.html">Worksheets PDF</a></li>
+            <li><a href="index.html">Home</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        © 2025 EnglishEdu · Free English Learning for Everyone
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+      // ── Panel switch ──
+      function switchPanel(id) {
+        document
+          .querySelectorAll(".ex-panel")
+          .forEach((p) => p.classList.remove("active"));
+        document
+          .querySelectorAll(".ex-nav-btn")
+          .forEach((b) => b.classList.remove("active"));
+        document.getElementById("panel-" + id).classList.add("active");
+        event?.target?.classList.add("active");
+      }
+
+      // ── Score system ──
+      let totalScore = 0,
+        correctCount = 0,
+        streak = 0;
+      function addScore(pts, isCorrect) {
+        if (isCorrect) {
+          correctCount++;
+          streak++;
+          totalScore += pts;
+        } else {
+          streak = 0;
+        }
+        document.getElementById("total-score").textContent = totalScore;
+        document.getElementById("correct-count").textContent = correctCount;
+        document.getElementById("streak-count").textContent = streak;
+      }
+
+      // ── Fill in the Blank ──
+      function checkBlanks() {
+        const inputs = document.querySelectorAll(".blank-input");
+        let correct = 0;
+        inputs.forEach((inp) => {
+          const ans = inp.getAttribute("data-answer").toLowerCase().trim();
+          const val = inp.value.toLowerCase().trim();
+          inp.classList.remove("correct", "wrong");
+          const ansEl = inp
+            .closest(".blank-card")
+            .querySelector(".blank-answer");
+          if (val === ans) {
+            inp.classList.add("correct");
+            correct++;
+            ansEl.style.display = "none";
+          } else {
+            inp.classList.add("wrong");
+            ansEl.style.display = "block";
+          }
+        });
+        const res = document.getElementById("blank-result");
+        res.classList.add("show");
+        const pct = Math.round((correct / inputs.length) * 100);
+        document.getElementById("blank-score-text").textContent =
+          `You got ${correct}/${inputs.length} correct (${pct}%). ${pct >= 80 ? "🌟 Excellent!" : pct >= 50 ? "👍 Good job!" : "📚 Keep practising!"}`;
+        addScore(correct * 10, correct > 0);
+      }
+
+      // ── Matching ──
+      const matchPairs = [
+        { l: "Simple Present", r: "S + V(s/es)" },
+        { l: "Past Continuous", r: "S + was/were + V-ing" },
+        { l: "Present Perfect", r: "S + have/has + V3" },
+        { l: "Simple Future", r: "S + will + V1" },
+        { l: "Past Perfect", r: "S + had + V3" },
+        { l: "Future Perfect", r: "S + will have + V3" },
+      ];
+      let matchSelected = null,
+        matchedCount = 0;
+
+      function buildMatch() {
+        const left = [...matchPairs].sort(() => Math.random() - 0.5);
+        const right = [...matchPairs].sort(() => Math.random() - 0.5);
+        const lEl = document.getElementById("match-left");
+        const rEl = document.getElementById("match-right");
+        lEl.innerHTML = "";
+        rEl.innerHTML = "";
+        left.forEach((p) => {
+          const d = document.createElement("div");
+          d.className = "match-item";
+          d.textContent = p.l;
+          d.dataset.key = p.l;
+          d.dataset.side = "left";
+          d.onclick = () => selectMatch(d);
+          lEl.appendChild(d);
+        });
+        right.forEach((p) => {
+          const d = document.createElement("div");
+          d.className = "match-item";
+          d.textContent = p.r;
+          d.dataset.key = p.l;
+          d.dataset.side = "right";
+          d.onclick = () => selectMatch(d);
+          rEl.appendChild(d);
+        });
+        document.getElementById("match-result").classList.remove("show");
+        matchSelected = null;
+        matchedCount = 0;
+      }
+
+      function selectMatch(el) {
+        if (el.classList.contains("matched")) return;
+        if (!matchSelected) {
+          document
+            .querySelectorAll(".match-item")
+            .forEach((i) => i.classList.remove("selected"));
+          matchSelected = el;
+          el.classList.add("selected");
+        } else {
+          if (matchSelected === el) {
+            el.classList.remove("selected");
+            matchSelected = null;
+            return;
+          }
+          const sameKey = matchSelected.dataset.key === el.dataset.key;
+          const diffSides = matchSelected.dataset.side !== el.dataset.side;
+          if (sameKey && diffSides) {
+            [matchSelected, el].forEach((i) => {
+              i.classList.remove("selected");
+              i.classList.add("matched");
+              i.style.pointerEvents = "none";
+            });
+            matchedCount++;
+            addScore(15, true);
+            if (matchedCount === matchPairs.length)
+              document.getElementById("match-result").classList.add("show");
+          } else {
+            [matchSelected, el].forEach((i) => {
+              i.classList.add("wrong");
+              setTimeout(() => i.classList.remove("wrong", "selected"), 600);
+            });
+            addScore(0, false);
+          }
+          matchSelected = null;
+        }
+      }
+
+      function resetMatch() {
+        buildMatch();
+      }
+
+      // ── True / False ──
+      const tfData = [
+        { stmt: '"She go to school" is grammatically correct.', ans: false },
+        {
+          stmt: 'The Present Perfect uses "have/has + past participle".',
+          ans: true,
+        },
+        { stmt: '"She was eating" is an example of Past Simple.', ans: false },
+        { stmt: "Adjectives modify nouns.", ans: true },
+        {
+          stmt: "The passive voice structure is: Object + be + Past Participle.",
+          ans: true,
+        },
+        {
+          stmt: 'In the Second Conditional, we use Present Simple in the "if" clause.',
+          ans: false,
+        },
+        {
+          stmt: "Adverbs can modify verbs, adjectives, and other adverbs.",
+          ans: true,
+        },
+        {
+          stmt: '"Had + past participle" is used for the Past Perfect tense.',
+          ans: true,
+        },
+      ];
+      let tfScore = 0,
+        tfAnswered = 0;
+
+      function buildTF() {
+        tfScore = 0;
+        tfAnswered = 0;
+        const container = document.getElementById("tf-container");
+        container.innerHTML = "";
+        document.getElementById("tf-result").classList.remove("show");
+        tfData.forEach((item, i) => {
+          const card = document.createElement("div");
+          card.className = "tf-card glass";
+          card.innerHTML = `
+      <div class="tf-stmt">${i + 1}. ${item.stmt}</div>
+      <div class="tf-btns">
+        <button class="tf-btn" onclick="checkTF(this, true, ${item.ans}, ${i})">✅ True</button>
+        <button class="tf-btn" onclick="checkTF(this, false, ${item.ans}, ${i})">❌ False</button>
+      </div>`;
+          container.appendChild(card);
+        });
+      }
+
+      function checkTF(btn, chosen, correct, idx) {
+        const btns = btn.closest(".tf-btns").querySelectorAll(".tf-btn");
+        btns.forEach((b) => (b.disabled = true));
+        if (chosen === correct) {
+          btn.classList.add("correct");
+          tfScore++;
+          addScore(10, true);
+        } else {
+          btn.classList.add("wrong");
+          btns[chosen ? 1 : 0].classList.add("correct");
+          addScore(0, false);
+        }
+        tfAnswered++;
+        if (tfAnswered === tfData.length) {
+          const res = document.getElementById("tf-result");
+          res.classList.add("show");
+          document.getElementById("tf-score-text").textContent =
+            `You scored ${tfScore}/${tfData.length}. ${tfScore >= 7 ? "🌟 Excellent!" : tfScore >= 5 ? "👍 Good job!" : "📚 Review the grammar rules and try again!"}`;
+        }
+      }
+
+      function resetTF() {
+        buildTF();
+      }
+
+      // Init
+      document.addEventListener("DOMContentLoaded", () => {
+        buildMatch();
+        buildTF();
+      });
+    </script>
+  </body>
+</html>

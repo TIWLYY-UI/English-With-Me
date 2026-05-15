@@ -1,0 +1,956 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>English With Me</title>
+    <link rel="icon" type="image/x-icon" href="image/e-logo.png" />
+    <link rel="stylesheet" href="css/grammar.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body class="mesh-bg">
+    <!-- NAVBAR -->
+    <nav class="navbar">
+      <div class="navbar-inner">
+        <a href="index.html" class="nav-logo">
+          <div class="logo-icon"><img src="image/e-logo.png" alt="" /></div>
+          English With Me
+        </a>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="grammar.html">Grammar</a></li>
+          <li><a href="tenses.html">Tenses</a></li>
+          <li><a href="word-combi.html">Word Combinations</a></li>
+          <li><a href="exercises.html">Exercises</a></li>
+          <li><a href="downloads.html">Downloads</a></li>
+        </ul>
+        <div class="nav-right">
+          <div class="search-wrap">
+            <input type="text" placeholder="Search lessons…" />
+            <i class="fa fa-search search-icon"></i>
+          </div>
+          <button
+            class="dark-toggle"
+            onclick="toggleDark()"
+            title="Toggle dark mode"
+          >
+            🌙
+          </button>
+          <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+      <div class="mobile-menu" id="mobile-menu">
+        <a href="index.html">🏠 Home</a>
+        <a href="grammar.html">📖 Grammar</a>
+        <a href="tenses.html">⏱ Tenses</a>
+        <a href="word-combi.html">🧩 Word Combinations</a>
+        <a href="exercises.html">✏️ Exercises</a>
+        <a href="downloads.html">📥 Downloads</a>
+      </div>
+    </nav>
+
+    <!-- PAGE HERO -->
+    <div class="page-hero mesh-bg">
+      <div class="container">
+        <span class="section-label">📖 Grammar</span>
+        <h1>English Grammar Essentials</h1>
+        <p>ไวยากรณ์ภาษาอังกฤษครบครัน — จากพื้นฐานสู่ขั้นสูง เรียนรู้ได้ทันที</p>
+      </div>
+    </div>
+
+    <!-- TOPIC CHIPS NAV -->
+    <section style="padding: 36px 0 0">
+      <div class="container">
+        <div class="topic-chips reveal">
+          <span class="chip active" onclick="scrollTo('#parts')"
+            >Parts of Speech</span
+          >
+          <span class="chip" onclick="scrollTo('#sentence')"
+            >Sentence Structure</span
+          >
+          <span class="chip" onclick="scrollTo('#articles')">Articles</span>
+          <span class="chip" onclick="scrollTo('#prepositions')"
+            >Prepositions</span
+          >
+          <span class="chip" onclick="scrollTo('#conjunctions')"
+            >Conjunctions</span
+          >
+          <span class="chip" onclick="scrollTo('#active-passive')"
+            >Active / Passive</span
+          >
+          <span class="chip" onclick="scrollTo('#conditionals')"
+            >Conditionals</span
+          >
+          <span class="chip" onclick="scrollTo('#reported')"
+            >Reported Speech</span
+          >
+          <span class="chip" onclick="scrollTo('#vocab')">Vocabulary</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ PARTS OF SPEECH ═══ -->
+    <section id="parts">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-label">Foundation</span>
+          <h2 class="section-title">Parts of Speech</h2>
+          <p class="section-sub">
+            Every English word belongs to one of eight categories. Understanding
+            them is the first step.
+          </p>
+        </div>
+        <div class="two-col">
+          <div>
+            <div class="accordion-item reveal">
+              <button class="accordion-header" onclick="toggleAcc(this)">
+                <span>🔵 Nouns — ชื่อบุคคล สถานที่ สิ่งของ</span>
+                <i class="fa fa-chevron-down accordion-chevron"></i>
+              </button>
+              <div class="accordion-body">
+                <div class="accordion-body-inner">
+                  <div class="rule-box">
+                    A noun names a person, place, thing, or idea.
+                  </div>
+                  <p
+                    style="
+                      font-size: 0.85rem;
+                      color: var(--clr-muted);
+                      margin-bottom: 10px;
+                    "
+                  >
+                    Types: Proper, Common, Abstract, Collective, Countable,
+                    Uncountable
+                  </p>
+                  <ul class="example-list">
+                    <li>
+                      <strong>Bangkok</strong> is a beautiful city. (proper)
+                    </li>
+                    <li>She has a <strong>dog</strong>. (common)</li>
+                    <li><strong>Freedom</strong> is priceless. (abstract)</li>
+                    <li>
+                      A <strong>flock</strong> of birds flew past. (collective)
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item reveal reveal-delay-1">
+              <button class="accordion-header" onclick="toggleAcc(this)">
+                <span>🟢 Verbs — คำกริยา การกระทำ</span>
+                <i class="fa fa-chevron-down accordion-chevron"></i>
+              </button>
+              <div class="accordion-body">
+                <div class="accordion-body-inner">
+                  <div class="rule-box">
+                    A verb expresses an action, occurrence, or state of being.
+                  </div>
+                  <p
+                    style="
+                      font-size: 0.85rem;
+                      color: var(--clr-muted);
+                      margin-bottom: 10px;
+                    "
+                  >
+                    Types: Action, Linking, Auxiliary, Modal
+                  </p>
+                  <ul class="example-list">
+                    <li>She <strong>runs</strong> every morning. (action)</li>
+                    <li>He <strong>is</strong> a teacher. (linking)</li>
+                    <li>They <strong>have</strong> finished. (auxiliary)</li>
+                    <li>You <strong>should</strong> study hard. (modal)</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item reveal reveal-delay-2">
+              <button class="accordion-header" onclick="toggleAcc(this)">
+                <span>🟡 Adjectives — คำขยายนาม</span>
+                <i class="fa fa-chevron-down accordion-chevron"></i>
+              </button>
+              <div class="accordion-body">
+                <div class="accordion-body-inner">
+                  <div class="rule-box">
+                    Adjectives describe or modify nouns and pronouns.
+                  </div>
+                  <ul class="example-list">
+                    <li>She wore a <strong>beautiful</strong> dress.</li>
+                    <li>The <strong>old</strong> man smiled.</li>
+                    <li>It was a <strong>sunny</strong> day.</li>
+                  </ul>
+                  <p
+                    style="
+                      font-size: 0.82rem;
+                      color: var(--clr-muted);
+                      margin-top: 10px;
+                    "
+                  >
+                    Order: opinion → size → age → shape → colour → origin →
+                    material → purpose + noun
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item reveal reveal-delay-3">
+              <button class="accordion-header" onclick="toggleAcc(this)">
+                <span>🟠 Adverbs — คำขยายกริยา</span>
+                <i class="fa fa-chevron-down accordion-chevron"></i>
+              </button>
+              <div class="accordion-body">
+                <div class="accordion-body-inner">
+                  <div class="rule-box">
+                    Adverbs modify verbs, adjectives, or other adverbs. Many end
+                    in -ly.
+                  </div>
+                  <ul class="example-list">
+                    <li>She sings <strong>beautifully</strong>. (how)</li>
+                    <li>He arrived <strong>early</strong>. (when)</li>
+                    <li>They sat <strong>nearby</strong>. (where)</li>
+                    <li>It is <strong>very</strong> hot today. (degree)</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="accordion-item reveal">
+              <button class="accordion-header" onclick="toggleAcc(this)">
+                <span>🔴 Pronouns — คำสรรพนาม</span>
+                <i class="fa fa-chevron-down accordion-chevron"></i>
+              </button>
+              <div class="accordion-body">
+                <div class="accordion-body-inner">
+                  <div class="rule-box">
+                    Pronouns replace nouns to avoid repetition.
+                  </div>
+                  <div
+                    style="
+                      display: grid;
+                      grid-template-columns: 1fr 1fr;
+                      gap: 8px;
+                      font-size: 0.82rem;
+                      margin-top: 8px;
+                    "
+                  >
+                    <div
+                      style="
+                        padding: 8px;
+                        background: var(--clr-bg);
+                        border-radius: 7px;
+                      "
+                    >
+                      <strong>Subject:</strong><br />I, you, he, she, it, we,
+                      they
+                    </div>
+                    <div
+                      style="
+                        padding: 8px;
+                        background: var(--clr-bg);
+                        border-radius: 7px;
+                      "
+                    >
+                      <strong>Object:</strong><br />me, you, him, her, it, us,
+                      them
+                    </div>
+                    <div
+                      style="
+                        padding: 8px;
+                        background: var(--clr-bg);
+                        border-radius: 7px;
+                      "
+                    >
+                      <strong>Possessive:</strong><br />my, your, his, her, our,
+                      their
+                    </div>
+                    <div
+                      style="
+                        padding: 8px;
+                        background: var(--clr-bg);
+                        border-radius: 7px;
+                      "
+                    >
+                      <strong>Reflexive:</strong><br />myself, yourself,
+                      himself…
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item reveal reveal-delay-1">
+              <button class="accordion-header" onclick="toggleAcc(this)">
+                <span>🟣 Prepositions — คำบุพบท</span>
+                <i class="fa fa-chevron-down accordion-chevron"></i>
+              </button>
+              <div class="accordion-body">
+                <div class="accordion-body-inner">
+                  <div class="rule-box">
+                    Prepositions show relationships between words in a sentence.
+                  </div>
+                  <ul class="example-list">
+                    <li>The book is <strong>on</strong> the table. (place)</li>
+                    <li>She arrived <strong>at</strong> 9 am. (time)</li>
+                    <li>
+                      He walked <strong>through</strong> the park. (movement)
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item reveal reveal-delay-2">
+              <button class="accordion-header" onclick="toggleAcc(this)">
+                <span>⚪ Conjunctions — คำเชื่อม</span>
+                <i class="fa fa-chevron-down accordion-chevron"></i>
+              </button>
+              <div class="accordion-body">
+                <div class="accordion-body-inner">
+                  <div class="rule-box">
+                    Conjunctions join words, phrases, or clauses.
+                  </div>
+                  <ul class="example-list">
+                    <li>
+                      I like tea <strong>and</strong> coffee. (coordinating)
+                    </li>
+                    <li>
+                      <strong>Although</strong> it rained, we went out.
+                      (subordinating)
+                    </li>
+                    <li>
+                      I was tired; <strong>however</strong>, I kept going.
+                      (correlative)
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item reveal reveal-delay-3">
+              <button class="accordion-header" onclick="toggleAcc(this)">
+                <span>🔶 Interjections — คำอุทาน</span>
+                <i class="fa fa-chevron-down accordion-chevron"></i>
+              </button>
+              <div class="accordion-body">
+                <div class="accordion-body-inner">
+                  <div class="rule-box">
+                    Interjections express emotion and are often followed by an
+                    exclamation mark.
+                  </div>
+                  <ul class="example-list">
+                    <li><strong>Wow!</strong> That's amazing!</li>
+                    <li><strong>Ouch!</strong> That hurt.</li>
+                    <li><strong>Hmm,</strong> let me think about it.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ SENTENCE STRUCTURE ═══ -->
+    <section id="sentence" style="background: var(--clr-bg2)">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-label">Structure</span>
+          <h2 class="section-title">Sentence Structure</h2>
+          <p class="section-sub">
+            A well-formed sentence needs a subject and a verb at minimum.
+          </p>
+        </div>
+        <div class="cards-grid">
+          <div class="lesson-card glass reveal">
+            <div
+              class="card-top"
+              style="
+                background: linear-gradient(135deg, #a7f3d0, #6ee7b7);
+                font-size: 2rem;
+              "
+            >
+              S + V
+            </div>
+            <div class="card-body">
+              <span class="card-badge">Type 1</span>
+              <h3>Simple Sentence</h3>
+              <p>One independent clause with a subject and verb.</p>
+              <div class="rule-box" style="margin-top: 8px">
+                Subject + Verb (+ Object)
+              </div>
+              <p style="font-size: 0.82rem; color: var(--clr-muted)">
+                <em>"She reads." / "Tom loves pizza."</em>
+              </p>
+            </div>
+          </div>
+          <div class="lesson-card glass reveal reveal-delay-1">
+            <div
+              class="card-top"
+              style="
+                background: linear-gradient(135deg, #bbf7d0, #4ade80);
+                font-size: 1.6rem;
+              "
+            >
+              S+V , S+V
+            </div>
+            <div class="card-body">
+              <span class="card-badge">Type 2</span>
+              <h3>Compound Sentence</h3>
+              <p>
+                Two independent clauses joined by a coordinating conjunction.
+              </p>
+              <div class="rule-box" style="margin-top: 8px">
+                Clause + and/but/so/or + Clause
+              </div>
+              <p style="font-size: 0.82rem; color: var(--clr-muted)">
+                <em>"I was tired, but I kept going."</em>
+              </p>
+            </div>
+          </div>
+          <div class="lesson-card glass reveal reveal-delay-2">
+            <div
+              class="card-top"
+              style="
+                background: linear-gradient(135deg, #d1fae5, #34d399);
+                font-size: 1.4rem;
+              "
+            >
+              Sub + Main
+            </div>
+            <div class="card-body">
+              <span class="card-badge">Type 3</span>
+              <h3>Complex Sentence</h3>
+              <p>
+                One independent + one dependent clause with a subordinating
+                conjunction.
+              </p>
+              <div class="rule-box" style="margin-top: 8px">
+                Because / Although / When + clause
+              </div>
+              <p style="font-size: 0.82rem; color: var(--clr-muted)">
+                <em>"Although it rained, we went out."</em>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ ARTICLES ═══ -->
+    <section id="articles">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-label">Articles</span>
+          <h2 class="section-title">Articles: a, an, the</h2>
+          <p class="section-sub">
+            Knowing when to use articles correctly is one of the most important
+            grammar skills.
+          </p>
+        </div>
+        <div class="two-col">
+          <div
+            class="glass reveal"
+            style="padding: 28px; border-radius: var(--radius-md)"
+          >
+            <h3 style="margin-bottom: 16px; font-size: 1.1rem">
+              📌 Indefinite Articles — a / an
+            </h3>
+            <div class="rule-box">
+              Use <strong>a</strong> before consonant sounds,
+              <strong>an</strong> before vowel sounds.
+            </div>
+            <ul class="example-list">
+              <li>She is <strong>a</strong> teacher.</li>
+              <li>He ate <strong>an</strong> apple.</li>
+              <li>
+                It was <strong>a</strong> <strong>unique</strong> idea. (unique
+                = /juːnɪk/ consonant sound)
+              </li>
+              <li>
+                Wait <strong>an</strong> hour. (hour = /aʊər/ vowel sound)
+              </li>
+            </ul>
+          </div>
+          <div
+            class="glass reveal reveal-delay-1"
+            style="padding: 28px; border-radius: var(--radius-md)"
+          >
+            <h3 style="margin-bottom: 16px; font-size: 1.1rem">
+              📌 Definite Article — the
+            </h3>
+            <div class="rule-box">
+              Use <strong>the</strong> when the noun is specific or already
+              known to the listener.
+            </div>
+            <ul class="example-list">
+              <li>Close <strong>the</strong> door. (specific door)</li>
+              <li><strong>The</strong> sun rises in the east. (unique)</li>
+              <li>
+                I saw a dog. <strong>The</strong> dog was huge. (mentioned
+                before)
+              </li>
+              <li>She plays <strong>the</strong> piano. (instruments)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ ACTIVE / PASSIVE ═══ -->
+    <section id="active-passive" style="background: var(--clr-bg2)">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-label">Voice</span>
+          <h2 class="section-title">Active &amp; Passive Voice</h2>
+          <p class="section-sub">
+            Change the focus of a sentence by switching between active and
+            passive constructions.
+          </p>
+        </div>
+        <div class="two-col">
+          <div
+            class="glass reveal"
+            style="
+              padding: 28px;
+              border-radius: var(--radius-md);
+              border-top: 4px solid var(--clr-primary);
+            "
+          >
+            <h3 style="margin-bottom: 12px">✅ Active Voice</h3>
+            <div class="rule-box">Subject + Verb + Object</div>
+            <p
+              style="
+                font-size: 0.85rem;
+                color: var(--clr-muted);
+                margin-bottom: 12px;
+              "
+            >
+              The subject performs the action. Direct, clear, and concise.
+            </p>
+            <ul class="example-list">
+              <li><strong>Tom</strong> wrote the letter.</li>
+              <li><strong>She</strong> is eating lunch.</li>
+              <li><strong>The chef</strong> cooked the meal.</li>
+            </ul>
+          </div>
+          <div
+            class="glass reveal reveal-delay-1"
+            style="
+              padding: 28px;
+              border-radius: var(--radius-md);
+              border-top: 4px solid var(--clr-accent);
+            "
+          >
+            <h3 style="margin-bottom: 12px">🔄 Passive Voice</h3>
+            <div class="rule-box">
+              Object + be + Past Participle + (by + Subject)
+            </div>
+            <p
+              style="
+                font-size: 0.85rem;
+                color: var(--clr-muted);
+                margin-bottom: 12px;
+              "
+            >
+              The subject receives the action. Used when the doer is unknown or
+              unimportant.
+            </p>
+            <ul class="example-list">
+              <li>The letter <strong>was written</strong> by Tom.</li>
+              <li>Lunch <strong>is being eaten</strong>.</li>
+              <li>The meal <strong>was cooked</strong> by the chef.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ CONDITIONALS ═══ -->
+    <section id="conditionals">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-label">Conditionals</span>
+          <h2 class="section-title">Conditional Sentences</h2>
+          <p class="section-sub">
+            Four types of conditionals to express real and hypothetical
+            situations.
+          </p>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 16px">
+          <div
+            class="glass reveal"
+            style="
+              padding: 24px 28px;
+              border-radius: var(--radius-md);
+              border-left: 4px solid #34d399;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                margin-bottom: 10px;
+              "
+            >
+              <span
+                style="
+                  background: var(--clr-primary);
+                  color: #fff;
+                  width: 32px;
+                  height: 32px;
+                  border-radius: 50%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-weight: 700;
+                  font-size: 0.85rem;
+                  flex-shrink: 0;
+                "
+                >0</span
+              >
+              <h4 style="font-size: 1rem">Zero Conditional — General Truths</h4>
+            </div>
+            <div class="rule-box">If + Present Simple , Present Simple</div>
+            <p style="font-size: 0.85rem; color: var(--clr-muted)">
+              <em>"If you heat water to 100°C, it boils."</em>
+            </p>
+          </div>
+          <div
+            class="glass reveal reveal-delay-1"
+            style="
+              padding: 24px 28px;
+              border-radius: var(--radius-md);
+              border-left: 4px solid #6ee7b7;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                margin-bottom: 10px;
+              "
+            >
+              <span
+                style="
+                  background: var(--clr-primary);
+                  color: #fff;
+                  width: 32px;
+                  height: 32px;
+                  border-radius: 50%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-weight: 700;
+                  font-size: 0.85rem;
+                  flex-shrink: 0;
+                "
+                >1</span
+              >
+              <h4 style="font-size: 1rem">
+                First Conditional — Real &amp; Possible
+              </h4>
+            </div>
+            <div class="rule-box">If + Present Simple , will + Base Verb</div>
+            <p style="font-size: 0.85rem; color: var(--clr-muted)">
+              <em>"If it rains, I will stay home."</em>
+            </p>
+          </div>
+          <div
+            class="glass reveal reveal-delay-2"
+            style="
+              padding: 24px 28px;
+              border-radius: var(--radius-md);
+              border-left: 4px solid #a7f3d0;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                margin-bottom: 10px;
+              "
+            >
+              <span
+                style="
+                  background: var(--clr-primary);
+                  color: #fff;
+                  width: 32px;
+                  height: 32px;
+                  border-radius: 50%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-weight: 700;
+                  font-size: 0.85rem;
+                  flex-shrink: 0;
+                "
+                >2</span
+              >
+              <h4 style="font-size: 1rem">
+                Second Conditional — Unreal / Unlikely
+              </h4>
+            </div>
+            <div class="rule-box">If + Past Simple , would + Base Verb</div>
+            <p style="font-size: 0.85rem; color: var(--clr-muted)">
+              <em>"If I were rich, I would travel the world."</em>
+            </p>
+          </div>
+          <div
+            class="glass reveal reveal-delay-3"
+            style="
+              padding: 24px 28px;
+              border-radius: var(--radius-md);
+              border-left: 4px solid #d1fae5;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                margin-bottom: 10px;
+              "
+            >
+              <span
+                style="
+                  background: var(--clr-primary);
+                  color: #fff;
+                  width: 32px;
+                  height: 32px;
+                  border-radius: 50%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-weight: 700;
+                  font-size: 0.85rem;
+                  flex-shrink: 0;
+                "
+                >3</span
+              >
+              <h4 style="font-size: 1rem">
+                Third Conditional — Impossible / Past Regret
+              </h4>
+            </div>
+            <div class="rule-box">
+              If + Past Perfect , would have + Past Participle
+            </div>
+            <p style="font-size: 0.85rem; color: var(--clr-muted)">
+              <em>"If I had studied harder, I would have passed."</em>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ VOCABULARY ═══ -->
+    <section id="vocab" style="background: var(--clr-bg2)">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-label">Vocabulary</span>
+          <h2 class="section-title">Essential Vocabulary</h2>
+          <p class="section-sub">
+            Key words every English learner should know, with definitions and
+            examples.
+          </p>
+        </div>
+        <div class="filter-tabs" data-target=".vocab-card">
+          <button class="tab-btn active" data-filter="all">All</button>
+          <button class="tab-btn" data-filter="noun">Nouns</button>
+          <button class="tab-btn" data-filter="verb">Verbs</button>
+          <button class="tab-btn" data-filter="adj">Adjectives</button>
+          <button class="tab-btn" data-filter="adv">Adverbs</button>
+        </div>
+        <div class="cards-grid">
+          <div class="vocab-card glass reveal" data-cat="verb">
+            <div class="vocab-icon">🏃</div>
+            <div>
+              <div class="vocab-word">Achieve</div>
+              <div class="vocab-type">verb</div>
+              <div class="vocab-def">
+                To successfully reach a goal or result.
+              </div>
+              <div class="vocab-ex">"She achieved excellent grades."</div>
+            </div>
+          </div>
+          <div class="vocab-card glass reveal reveal-delay-1" data-cat="adj">
+            <div class="vocab-icon">✨</div>
+            <div>
+              <div class="vocab-word">Brilliant</div>
+              <div class="vocab-type">adjective</div>
+              <div class="vocab-def">Exceptionally clever or talented.</div>
+              <div class="vocab-ex">"He is a brilliant student."</div>
+            </div>
+          </div>
+          <div class="vocab-card glass reveal reveal-delay-2" data-cat="noun">
+            <div class="vocab-icon">🌟</div>
+            <div>
+              <div class="vocab-word">Courage</div>
+              <div class="vocab-type">noun</div>
+              <div class="vocab-def">
+                The ability to do something that frightens one.
+              </div>
+              <div class="vocab-ex">"It takes courage to speak in public."</div>
+            </div>
+          </div>
+          <div class="vocab-card glass reveal" data-cat="verb">
+            <div class="vocab-icon">📚</div>
+            <div>
+              <div class="vocab-word">Discover</div>
+              <div class="vocab-type">verb</div>
+              <div class="vocab-def">To find something for the first time.</div>
+              <div class="vocab-ex">"They discovered a new species."</div>
+            </div>
+          </div>
+          <div class="vocab-card glass reveal reveal-delay-1" data-cat="adj">
+            <div class="vocab-icon">💪</div>
+            <div>
+              <div class="vocab-word">Efficient</div>
+              <div class="vocab-type">adjective</div>
+              <div class="vocab-def">
+                Achieving maximum productivity with minimum effort.
+              </div>
+              <div class="vocab-ex">"She is an efficient worker."</div>
+            </div>
+          </div>
+          <div class="vocab-card glass reveal reveal-delay-2" data-cat="adv">
+            <div class="vocab-icon">⚡</div>
+            <div>
+              <div class="vocab-word">Frequently</div>
+              <div class="vocab-type">adverb</div>
+              <div class="vocab-def">Often; at short intervals.</div>
+              <div class="vocab-ex">"He frequently visits the library."</div>
+            </div>
+          </div>
+          <div class="vocab-card glass reveal" data-cat="verb">
+            <div class="vocab-icon">🌱</div>
+            <div>
+              <div class="vocab-word">Improve</div>
+              <div class="vocab-type">verb</div>
+              <div class="vocab-def">To make or become better.</div>
+              <div class="vocab-ex">"Practice will improve your English."</div>
+            </div>
+          </div>
+          <div class="vocab-card glass reveal reveal-delay-1" data-cat="adj">
+            <div class="vocab-icon">🔑</div>
+            <div>
+              <div class="vocab-word">Significant</div>
+              <div class="vocab-type">adjective</div>
+              <div class="vocab-def">Important; of great consequence.</div>
+              <div class="vocab-ex">"This is a significant discovery."</div>
+            </div>
+          </div>
+          <div class="vocab-card glass reveal reveal-delay-2" data-cat="noun">
+            <div class="vocab-icon">🎯</div>
+            <div>
+              <div class="vocab-word">Opportunity</div>
+              <div class="vocab-type">noun</div>
+              <div class="vocab-def">
+                A set of circumstances that makes something possible.
+              </div>
+              <div class="vocab-ex">"Seize every opportunity to learn."</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section>
+      <div class="container">
+        <div class="cta-banner reveal">
+          <h2>Test Your Grammar Skills</h2>
+          <p>
+            Put what you've learned to the test with our interactive exercises.
+          </p>
+          <a
+            href="exercises.html"
+            class="btn"
+            style="
+              background: #fff;
+              color: var(--clr-primary);
+              font-weight: 700;
+            "
+          >
+            <i class="fa fa-pencil"></i> Start Exercises
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="logo">📗 EnglishEdu</div>
+          <p>
+            A free English learning platform for Thai students and beginners
+            worldwide.
+          </p>
+          <div class="social-row">
+            <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-btn"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-btn"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4>Learn</h4>
+          <ul>
+            <li><a href="grammar.html">Grammar</a></li>
+            <li><a href="tenses.html">Tenses</a></li>
+            <li><a href="exercises.html">Exercises</a></li>
+            <li><a href="downloads.html">Downloads</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Grammar Topics</h4>
+          <ul>
+            <li><a href="#parts">Parts of Speech</a></li>
+            <li><a href="#sentence">Sentence Structure</a></li>
+            <li><a href="#active-passive">Active/Passive</a></li>
+            <li><a href="#conditionals">Conditionals</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="downloads.html">Grammar Guide PDF</a></li>
+            <li><a href="tenses.html">Tense Chart</a></li>
+            <li><a href="exercises.html">Mini Quiz</a></li>
+            <li><a href="index.html">Home</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        © 2025 EnglishEdu · Free English Learning for Everyone
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+      function toggleAcc(btn) {
+        const body = btn.nextElementSibling;
+        const isOpen = btn.classList.contains("open");
+        document.querySelectorAll(".accordion-header").forEach((b) => {
+          b.classList.remove("open");
+          b.nextElementSibling.classList.remove("open");
+        });
+        if (!isOpen) {
+          btn.classList.add("open");
+          body.classList.add("open");
+        }
+      }
+      function scrollTo(id) {
+        document.querySelector(id)?.scrollIntoView({ behavior: "smooth" });
+        document
+          .querySelectorAll(".chip")
+          .forEach((c) => c.classList.remove("active"));
+        event.target.classList.add("active");
+      }
+    </script>
+  </body>
+</html>

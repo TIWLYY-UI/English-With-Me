@@ -167,9 +167,9 @@ section {
 .navbar-inner {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 10px;
   height: 68px;
-  max-width: 1180px;
+  max-width: 1300px;
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -183,16 +183,14 @@ section {
   color: var(--clr-primary);
 }
 .nav-logo .logo-icon {
-  width: 38px;
-  height: 38px;
+  width: 40px;
+  height: 40px;
   border-radius: 10px;
-  background: linear-gradient(135deg, var(--clr-primary), var(--clr-accent));
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.2rem;
   color: #fff;
-  box-shadow: 0 4px 14px rgba(5, 150, 105, 0.35);
 }
 .nav-links {
   display: flex;
@@ -1281,4 +1279,267 @@ footer ul li a:hover {
   section {
     padding: 56px 0;
   }
+}
+.col-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 22px;
+}
+.col-card {
+  border-radius: var(--radius-md);
+  padding: 24px 22px;
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition);
+}
+.col-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+.col-cat {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--clr-primary);
+  margin-bottom: 10px;
+}
+.col-word {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--clr-dark);
+  margin-bottom: 14px;
+}
+[data-theme="dark"] .col-word {
+  color: var(--clr-accent);
+}
+.col-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.col-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 8px 12px;
+  background: var(--clr-bg);
+  border-radius: 8px;
+  font-size: 0.83rem;
+}
+.col-combo {
+  color: var(--clr-primary);
+  font-weight: 700;
+  min-width: 120px;
+  flex-shrink: 0;
+}
+.col-meaning {
+  color: var(--clr-muted);
+}
+
+/* ── Phrasal Verb Cards ── */
+.pv-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 18px;
+}
+.pv-card {
+  border-radius: var(--radius-md);
+  padding: 20px;
+  border-left: 4px solid var(--clr-accent);
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition);
+}
+.pv-card:hover {
+  transform: translateX(4px);
+  box-shadow: var(--shadow-md);
+}
+.pv-verb {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: var(--clr-primary);
+  margin-bottom: 6px;
+}
+.pv-def {
+  font-size: 0.83rem;
+  color: var(--clr-text);
+  margin-bottom: 6px;
+}
+.pv-ex {
+  font-size: 0.78rem;
+  color: var(--clr-muted);
+  font-style: italic;
+  padding: 6px 10px;
+  background: var(--clr-bg);
+  border-radius: 6px;
+}
+
+/* ── Idioms ── */
+.idiom-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+.idiom-card {
+  border-radius: var(--radius-md);
+  padding: 22px 20px;
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition);
+}
+.idiom-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+.idiom-icon {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+.idiom-phrase {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  color: var(--clr-primary);
+  margin-bottom: 6px;
+}
+.idiom-meaning {
+  font-size: 0.85rem;
+  color: var(--clr-text);
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+.idiom-ex {
+  font-size: 0.8rem;
+  color: var(--clr-muted);
+  font-style: italic;
+}
+
+/* ── Prefix / Suffix Tables ── */
+.affix-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+@media (max-width: 700px) {
+  .affix-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.affix-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.84rem;
+}
+.affix-table th {
+  background: linear-gradient(135deg, var(--clr-primary), var(--clr-primary2));
+  color: #fff;
+  padding: 10px 14px;
+  text-align: left;
+}
+.affix-table th:first-child {
+  border-radius: 10px 0 0 0;
+}
+.affix-table th:last-child {
+  border-radius: 0 10px 0 0;
+}
+.affix-table td {
+  padding: 9px 14px;
+  border-bottom: 1px solid var(--clr-border);
+  color: var(--clr-text);
+}
+.affix-table tr:last-child td {
+  border-bottom: none;
+}
+.affix-table td:first-child {
+  font-weight: 700;
+  color: var(--clr-primary);
+  font-family: monospace;
+}
+.affix-table tr:hover td {
+  background: rgba(16, 185, 129, 0.06);
+}
+
+/* ── Search bar big ── */
+.big-search {
+  display: flex;
+  gap: 10px;
+  max-width: 560px;
+  margin: 28px auto 0;
+}
+.big-search input {
+  flex: 1;
+  padding: 13px 20px;
+  border-radius: 50px;
+  border: 1.5px solid var(--clr-border);
+  background: var(--clr-surface);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--clr-text);
+  outline: none;
+  transition:
+    border-color var(--transition),
+    box-shadow var(--transition);
+}
+.big-search input:focus {
+  border-color: var(--clr-primary2);
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.13);
+}
+.big-search button {
+  padding: 13px 24px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(135deg, var(--clr-primary), var(--clr-primary2));
+  color: #fff;
+  font-weight: 600;
+  font-family: var(--font-body);
+  transition: filter var(--transition);
+}
+.big-search button:hover {
+  filter: brightness(1.08);
+}
+
+/* Word of the Day */
+.wotd {
+  border-radius: var(--radius-lg);
+  padding: 40px 48px;
+  background: linear-gradient(
+    135deg,
+    var(--clr-primary) 0%,
+    var(--clr-accent) 100%
+  );
+  color: #fff;
+  text-align: center;
+}
+.wotd-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.8;
+  margin-bottom: 8px;
+}
+.wotd-word {
+  font-family: var(--font-display);
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+.wotd-type {
+  font-size: 0.85rem;
+  opacity: 0.8;
+  font-style: italic;
+  margin-bottom: 14px;
+}
+.wotd-def {
+  font-size: 1rem;
+  opacity: 0.92;
+  max-width: 480px;
+  margin: 0 auto 14px;
+  line-height: 1.7;
+}
+.wotd-ex {
+  font-size: 0.88rem;
+  opacity: 0.78;
+  font-style: italic;
 }
