@@ -565,7 +565,7 @@ section {
   font-size: 1rem;
 }
 .section-head {
-  margin-bottom: 48px;
+  margin-bottom: 12px;
 }
 .section-head.center {
   text-align: center;
@@ -1447,4 +1447,24 @@ footer ul li a:hover {
   font-family: monospace;
   font-size: 0.8rem;
   color: var(--clr-primary);
+}
+.table-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(16, 185, 129, 0.1);
+  color: var(--clr-primary);
+  padding: 5px 15px;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 12px;
+  border: 1px solid var(--clr-border);
+}
+
+/* Adds vertical spacing before Negative and Questionable labels */
+.table-tag:not(:first-of-type) {
+  margin-top: 40px;
 }
