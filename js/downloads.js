@@ -280,20 +280,15 @@ document.addEventListener("DOMContentLoaded", () => {
   animateCounters();
 });
 
-function simulateDownload(name) {
+function showToast(name) {
   const toast = document.getElementById("dl-toast");
+
   document.getElementById("dl-toast-msg").textContent =
     `"${name}" download started! ✅`;
-  toast.classList.add("show");
-  setTimeout(() => toast.classList.remove("show"), 3000);
-}
 
-function filterFiles(q) {
-  q = q.toLowerCase();
-  document.querySelectorAll(".dl-card-full").forEach((c) => {
-    c.style.opacity =
-      !q || c.textContent.toLowerCase().includes(q) ? "1" : "0.25";
-    c.style.transform =
-      !q || c.textContent.toLowerCase().includes(q) ? "" : "scale(0.97)";
-  });
+  toast.classList.add("show");
+
+  setTimeout(() => {
+    toast.classList.remove("show");
+  }, 3000);
 }
