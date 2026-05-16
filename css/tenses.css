@@ -1255,6 +1255,23 @@ footer ul li a:hover {
   }
 }
 @media (max-width: 680px) {
+  .nav-links {
+    display: none;
+  }
+
+  .nav-logo {
+    font-size: 15px;
+  }
+
+  .nav-logo .logo-icon {
+    width: 35px;
+    height: 35px;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
   .footer-inner {
     grid-template-columns: 1fr 1fr !important;
     gap: 16px !important;
