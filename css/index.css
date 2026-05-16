@@ -1255,6 +1255,14 @@ footer ul li a:hover {
   }
 }
 @media (max-width: 680px) {
+  .nav-links {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+  
   .footer-inner {
     grid-template-columns: 1fr 1fr !important;
     gap: 16px !important;
