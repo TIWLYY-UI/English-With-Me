@@ -29,8 +29,17 @@
         </ul>
         <div class="nav-right">
           <div class="search-wrap">
-            <input type="text" placeholder="Search lessons…" />
-            <i class="fa fa-search search-icon"></i>
+            <input
+              type="text"
+              id="search-input"
+              placeholder="Search lessons…"
+              onkeydown="if (event.key === 'Enter') doSearch();"
+            />
+            <i
+              class="fa fa-search search-icon"
+              onclick="doSearch()"
+              style="pointer-events: auto; cursor: pointer"
+            ></i>
           </div>
           <button
             class="dark-toggle"
@@ -59,7 +68,7 @@
       <div class="container">
         <span class="section-label">📖 Grammar</span>
         <h1>English Grammar Essentials</h1>
-        <p>ไวยากรณ์ภาษาอังกฤษครบครัน — จากพื้นฐานสู่ขั้นสูง เรียนรู้ได้ทันที</p>
+        <p>Comprehensive English grammar — from basic to advanced, learn it instantly.</p>
       </div>
     </div>
 
@@ -76,20 +85,11 @@
           <span class="chip" onclick="scrollToSection('#articles', this)"
             >Articles</span
           >
-          <span class="chip" onclick="scrollToSection('#prepositions', this)"
-            >Prepositions</span
-          >
-          <span class="chip" onclick="scrollToSection('#conjunctions', this)"
-            >Conjunctions</span
-          >
           <span class="chip" onclick="scrollToSection('#active-passive', this)"
             >Active / Passive</span
           >
           <span class="chip" onclick="scrollToSection('#conditionals', this)"
             >Conditionals</span
-          >
-          <span class="chip" onclick="scrollToSection('#reported', this)"
-            >Reported Speech</span
           >
           <span class="chip" onclick="scrollToSection('#vocab', this)"
             >Vocabulary</span
@@ -968,5 +968,6 @@
     </footer>
     <script src="js/tracker.js"></script>
     <script src="js/grammar.js"></script>
+    <script src="js/search.js"></script>
   </body>
 </html>

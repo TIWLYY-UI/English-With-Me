@@ -494,3 +494,10 @@ document.addEventListener("DOMContentLoaded", () => {
   initQuiz();
   animateCounters();
 });
+  // Ensure icons show after page loads
+  window.addEventListener('load', function() {
+    document.querySelectorAll('.social-btn i').forEach(icon => {
+      icon.style.visibility = 'visible';
+      icon.style.opacity = '1';
+    });
+  });

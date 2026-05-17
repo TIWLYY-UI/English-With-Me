@@ -108,13 +108,11 @@ function initSearch() {
   document.querySelectorAll(".search-wrap input").forEach((inp) => {
     inp.addEventListener("input", function () {
       const q = this.value.toLowerCase();
-      if (!q) return;
-      // Highlight matching cards on same page
       document
         .querySelectorAll(".lesson-card, .dl-card, .ex-card")
         .forEach((card) => {
-          const text = card.textContent.toLowerCase();
-          card.style.opacity = text.includes(q) ? "1" : "0.3";
+          card.style.opacity =
+            !q || card.textContent.toLowerCase().includes(q) ? "1" : "0.3";
         });
     });
     inp.addEventListener("blur", function () {
@@ -279,3 +277,11 @@ document.addEventListener("DOMContentLoaded", () => {
   initQuiz();
   animateCounters();
 });
+  // Ensure icons show after page loads
+  window.addEventListener('load', function() {
+    document.querySelectorAll('.social-btn i').forEach(icon => {
+      icon.style.visibility = 'visible';
+      icon.style.opacity = '1';
+    });
+  });
+

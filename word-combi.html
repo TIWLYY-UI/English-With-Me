@@ -29,8 +29,17 @@
         </ul>
         <div class="nav-right">
           <div class="search-wrap">
-            <input type="text" placeholder="Search lessons…" />
-            <i class="fa fa-search search-icon"></i>
+            <input
+              type="text"
+              id="search-input"
+              placeholder="Search lessons…"
+              onkeydown="if (event.key === 'Enter') doSearch();"
+            />
+            <i
+              class="fa fa-search search-icon"
+              onclick="doSearch()"
+              style="pointer-events: auto; cursor: pointer"
+            ></i>
           </div>
           <button
             class="dark-toggle"
@@ -743,5 +752,6 @@
     </footer>
     <script src="js/tracker.js"></script>
     <script src="js/word-combi.js"></script>
+    <script src="js/search.js"></script>
   </body>
 </html>

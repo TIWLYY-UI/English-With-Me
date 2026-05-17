@@ -1258,23 +1258,36 @@ footer ul li a:hover {
   }
 }
 @media (max-width: 680px) {
-    .nav-links {
+  .search-wrap {
     display: none;
   }
 
-  .nav-logo{
+  .navbar-inner {
+    height: 56px;
+    padding: 0 14px;
+  }
+
+  .nav-logo {
     font-size: 15px;
   }
 
-  .nav-logo .logo-icon{
+  .nav-logo .logo-icon {
     width: 35px;
     height: 35px;
+  }
+
+  .nav-links {
+    display: none;
   }
 
   .hamburger {
     display: flex;
   }
 
+  .search-wrap input {
+    width: 120px;
+  }
+  
   .footer-inner {
     grid-template-columns: 1fr 1fr !important;
     gap: 16px !important;
@@ -1465,18 +1478,39 @@ footer ul li a:hover {
   font-style: italic;
   margin-top: 2px;
 }
-/* ── Prevent Flash of Unstyled Icons ── */
+/* Replace the problematic section with this: */
+
+/* ── Font Awesome Icons in Footer ── */
 .social-btn i {
-  font-family: "Font Awesome 6 Brands" !important;
+  font-family: "Font Awesome 6 Brands", "Font Awesome 6 Free" !important;
   font-style: normal;
   font-weight: 400;
-  display: inline-block;
+  display: inline-block !important;
+  font-size: 0.9rem !important;
   -webkit-font-smoothing: antialiased;
-}
-
-/* Dark mode ไม่ซ่อน icon */
-[data-theme="dark"] .social-btn i,
-[data-theme="light"] .social-btn i {
   visibility: visible !important;
   opacity: 1 !important;
+  color: inherit !important;
+  width: auto !important;
+  height: auto !important;
+}
+
+/* Ensure icons are white */
+footer .social-btn i {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .social-btn i {
+  color: #ffffff !important;
+}
+
+[data-theme="light"] .social-btn i {
+  color: #ffffff !important;
+}
+
+/* Ensure Font Awesome CDN loads properly */
+@supports (font-family: "Font Awesome 6 Brands") {
+  .social-btn i::before {
+    display: inline !important;
+  }
 }
